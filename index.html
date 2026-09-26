@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syeda Suhaima Banu | Full-Stack Developer & Backend Specialist</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                            accent: '#6366f1'
+                        },
+                        darkbg: '#0b0f19',
+                        darkcard: '#111827',
+                        darkborder: '#1f2937'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 15px rgba(20, 184, 166, 0.3)' },
+                            '100%': { boxShadow: '0 0 30px rgba(99, 102, 241, 0.6)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom CSS Enhancements */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(31, 41, 55, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(20, 184, 166, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(20, 184, 166, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #2dd4bf 0%, #38bdf8 50%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-border {
+            position: relative;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, rgba(45,212,191,0.3), rgba(129,140,248,0.3));
+            padding: 1px;
+        }
+
+        .gradient-border > div {
+            background: #111827;
+            border-radius: calc(1rem - 1px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0d9488;
+        }
+
+        /* Terminal Cursor */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-100 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Sticky Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 glass-panel rounded-b-2xl px-6 my-2 border-t-0 shadow-xl">
+                <!-- Logo / Brand -->
+                <a href="#hero" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-indigo-600 flex items-center justify-center text-white font-bold font-mono text-lg shadow-lg group-hover:scale-105 transition-transform">
+                        SB
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg tracking-tight text-white group-hover:text-brand-500 transition-colors">Syeda Suhaima</span>
+                        <span class="block text-xs text-gray-400 font-mono">Full-Stack Developer</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
+                    <a href="#about" class="hover:text-brand-500 transition-colors">About</a>
+                    <a href="#skills" class="hover:text-brand-500 transition-colors">Skills</a>
+                    <a href="#experience" class="hover:text-brand-500 transition-colors">Experience</a>
+                    <a href="#projects" class="hover:text-brand-500 transition-colors">Projects</a>
+                    <a href="#certifications" class="hover:text-brand-500 transition-colors">Certifications</a>
+                    <a href="#contact" class="hover:text-brand-500 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <button onclick="openResumeModal()" class="px-4 py-2 rounded-xl bg-darkborder hover:bg-gray-800 text-xs font-semibold text-gray-200 border border-gray-700 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-file-pdf text-brand-500"></i> Resume
+                    </button>
+                    <a href="#contact" class="px-5 py-2 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-xs font-semibold text-white shadow-lg hover:shadow-brand-500/25 transition-all">
+                        Hire Me
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto px-4 mt-2">
+            <div class="glass-panel rounded-2xl p-6 space-y-4 shadow-2xl border border-gray-800">
+                <a href="#about" class="mobile-link block text-gray-300 hover:text-brand-500 font-medium">About</a>
+                <a href="#skills" class="mobile-link block text-gray-300 hover:text-brand-500 font-medium">Skills</a>
+                <a href="#experience" class="mobile-link block text-gray-300 hover:text-brand-500 font-medium">Experience</a>
+                <a href="#projects" class="mobile-link block text-gray-300 hover:text-brand-500 font-medium">Projects</a>
+                <a href="#certifications" class="mobile-link block text-gray-300 hover:text-brand-500 font-medium">Certifications</a>
+                <a href="#contact" class="mobile-link block text-gray-300 hover:text-brand-500 font-medium">Contact</a>
+                <div class="pt-4 border-t border-gray-800 flex flex-col gap-3">
+                    <button onclick="openResumeModal()" class="w-full py-2.5 rounded-xl bg-darkborder text-xs font-semibold text-gray-200 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-file-pdf text-brand-500"></i> View Resume
+                    </button>
+                    <a href="#contact" class="mobile-link w-full py-2.5 text-center rounded-xl bg-brand-600 text-xs font-semibold text-white">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <!-- Background Ambient Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Hero Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <!-- Location Status Pill -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <i class="fa-solid fa-location-dot"></i> Dubai, UAE &nbsp;|&nbsp; <span class="text-gray-300">Spouse Visa (Immediate Joiner)</span>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Hi, I'm <span class="gradient-text">Syeda Suhaima</span>
+                        <span class="block text-2xl sm:text-3xl lg:text-4xl text-gray-300 font-semibold mt-2">
+                            Full-Stack & Backend Engineer
+                        </span>
+                    </h1>
+
+                    <!-- Animated Typewriter Role -->
+                    <div class="text-lg sm:text-xl font-mono text-gray-400 h-8 flex items-center justify-center lg:justify-start">
+                        <span class="text-brand-500 font-semibold mr-2">&gt;</span>
+                        <span id="typewriter" class="typing-cursor text-indigo-400 font-medium"></span>
+                    </div>
+
+                    <!-- Brief Pitch -->
+                    <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        With <strong class="text-gray-200">5+ years of experience</strong> building high-throughput microservices, REST APIs, and system integrations using <strong class="text-brand-500">Python, Django, FastAPI, SQL</strong>, and modern JavaScript. Proven record in handling 500+ concurrent req/sec and daily ETL pipelines with 50,000+ records.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#contact" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-500 to-indigo-600 hover:from-brand-600 hover:to-indigo-700 text-white font-semibold text-sm shadow-xl shadow-brand-500/20 hover:scale-[1.02] transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Let's Connect
+                        </a>
+                        <button onclick="openResumeModal()" class="px-6 py-3.5 rounded-xl bg-darkcard hover:bg-gray-800 text-gray-200 font-semibold text-sm border border-gray-700 hover:border-gray-600 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-file-arrow-down text-brand-500"></i> View Resume PDF
+                        </button>
+                        <a href="https://linkedin.com/in/syeda-suhaima-banu" target="_blank" class="p-3.5 rounded-xl bg-darkcard hover:bg-gray-800 text-gray-300 hover:text-brand-500 border border-gray-700 transition-all" title="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin-in text-lg"></i>
+                        </a>
+                    </div>
+
+                    <!-- Highlights Stat Badges -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-gray-800/80">
+                        <div class="text-center lg:text-left">
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">5+</div>
+                            <div class="text-xs text-gray-400">Years Experience</div>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <div class="text-2xl sm:text-3xl font-extrabold text-brand-500 font-mono">15+</div>
+                            <div class="text-xs text-gray-400">Backend Modules</div>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <div class="text-2xl sm:text-3xl font-extrabold text-indigo-400 font-mono">50K+</div>
+                            <div class="text-xs text-gray-400">Daily Records ETL</div>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">99.9%</div>
+                            <div class="text-xs text-gray-400">Uptime Delivery</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Visual Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md">
+                        <!-- Card Glow Frame -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-indigo-600 rounded-3xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
+
+                        <div class="relative glass-card rounded-3xl p-6 border border-gray-700 shadow-2xl space-y-6">
+                            
+                            <!-- Profile Header -->
+                            <div class="flex items-center gap-4">
+                                <div class="relative">
+                                    <!-- Avatar Image Container -->
+                                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-brand-500 to-indigo-600 p-0.5 overflow-hidden shadow-xl">
+                                        <div class="w-full h-full bg-gray-900 rounded-[14px] flex items-center justify-center overflow-hidden">
+                                            <!-- SVG Developer Avatar Illustration -->
+                                            <svg class="w-full h-full text-brand-500" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="100" height="100" fill="#111827"/>
+                                                <circle cx="50" cy="40" r="22" fill="#1f2937" stroke="#14b8a6" stroke-width="2"/>
+                                                <path d="M50 20C40 20 32 28 32 38C32 42 34 46 37 49C35 52 30 58 30 65H70C70 58 65 52 63 49C66 46 68 42 68 38C68 28 60 20 50 20Z" fill="#0f766e"/>
+                                                <path d="M20 90C20 72 33 60 50 60C67 60 80 72 80 90H20Z" fill="#14b8a6" opacity="0.8"/>
+                                                <circle cx="43" cy="38" r="3" fill="#ffffff"/>
+                                                <circle cx="57" cy="38" r="3" fill="#ffffff"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <span class="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 border-2 border-darkcard rounded-full" title="Available Immediately"></span>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-white">Syeda Suhaima Banu</h3>
+                                    <p class="text-xs text-brand-500 font-mono">suhaima412@gmail.com</p>
+                                    <p class="text-xs text-gray-400 mt-1 flex items-center gap-1">
+                                        <i class="fa-solid fa-phone text-gray-500"></i> +971-551869330
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Interactive Interactive Backend Console Widget -->
+                            <div class="bg-gray-950 rounded-2xl p-4 border border-gray-800 font-mono text-xs text-gray-300 space-y-2">
+                                <div class="flex items-center justify-between border-b border-gray-800 pb-2 text-gray-500 text-[10px]">
+                                    <span class="flex items-center gap-1.5">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span>
+                                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-500 inline-block"></span>
+                                        <span class="w-2.5 h-2.5 rounded-full bg-green-500 inline-block"></span>
+                                        <span class="ml-2 font-semibold text-gray-400">suhaima-api-node.py</span>
+                                    </span>
+                                    <span class="text-emerald-400"><i class="fa-solid fa-circle-check"></i> Active</span>
+                                </div>
+                                <div class="space-y-1.5 pt-1">
+                                    <div class="text-gray-400"><span class="text-indigo-400">from</span> fastapi <span class="text-indigo-400">import</span> FastAPI, Depends</div>
+                                    <div class="text-gray-400"><span class="text-brand-500">app</span> = FastAPI(title=<span class="text-emerald-300">"Enterprise Gateway"</span>)</div>
+                                    <div class="text-gray-500"># Handling 500+ async req/sec</div>
+                                    <div class="text-emerald-400 flex justify-between pt-1">
+                                        <span>STATUS: 200 OK</span>
+                                        <span class="text-gray-400">Response: ~30ms</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tech Badges Pill Cloud -->
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-800 text-xs text-brand-400 border border-gray-700">Python 3.11</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-800 text-xs text-indigo-300 border border-gray-700">FastAPI</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-800 text-xs text-sky-300 border border-gray-700">Django ORM</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-800 text-xs text-emerald-300 border border-gray-700">Docker</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-800 text-xs text-yellow-300 border border-gray-700">PostgreSQL</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-800 text-xs text-purple-300 border border-gray-700">Azure</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative bg-darkcard/50 border-y border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-brand-500 tracking-widest uppercase mb-2 font-mono">Professional Background</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    Architecting Secure, High-Performance Systems
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Detailed Bio -->
+                <div class="lg:col-span-7 space-y-5 text-gray-300 leading-relaxed">
+                    <p class="text-lg text-gray-200">
+                        Full-Stack Developer with over <span class="text-brand-500 font-semibold">5 years of hands-on experience</span> engineering and maintaining mission-critical web applications, high-concurrency REST APIs, microservices, and complex system integrations.
+                    </p>
+                    <p>
+                        Backend-strong specialization in <strong class="text-white">Python (FastAPI, Django, Flask)</strong>, asynchronous Python <code class="text-brand-400 font-mono">asyncio</code>, database engineering (SQL, PostgreSQL, MySQL, NoSQL), and custom ORM modeling. Experienced in client-facing front-end development utilizing <strong class="text-white">HTML, CSS, and modern JavaScript</strong> to craft intuitive internal dashboards and enterprise screens.
+                    </p>
+                    <p>
+                        Deep experience integrating third-party systems including major payment gateways, enterprise CRM/ERP solutions, ServiceNow, and AI desk tools. Highly proficient in security best practices including <strong class="text-white">OAuth2, JWT authentication, and Role-Based Access Control (RBAC)</strong>.
+                    </p>
+
+                    <!-- Key Pillars -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="glass-card p-4 rounded-2xl flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Microservices & APIs</h4>
+                                <p class="text-xs text-gray-400 mt-1">Scalable, async backend architectures designed for high request throughput.</p>
+                            </div>
+                        </div>
+                        <div class="glass-card p-4 rounded-2xl flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Data Engineering</h4>
+                                <p class="text-xs text-gray-400 mt-1">ETL pipelines handling 50,000+ daily operational records using Pandas & Azure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Information Card -->
+                <div class="lg:col-span-5">
+                    <div class="glass-panel p-8 rounded-3xl border border-gray-800 space-y-6 shadow-2xl">
+                        <h3 class="text-xl font-bold text-white border-b border-gray-800 pb-4 flex items-center justify-between">
+                            <span>Key Details</span>
+                            <span class="text-xs font-mono font-normal text-brand-500 bg-brand-500/10 px-3 py-1 rounded-full">Dubai, UAE</span>
+                        </h3>
+
+                        <dl class="space-y-4 text-sm">
+                            <div class="flex justify-between items-center py-2 border-b border-gray-800/50">
+                                <dt class="text-gray-400">Current Location</dt>
+                                <dd class="text-white font-medium">Dubai, UAE</dd>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-800/50">
+                                <dt class="text-gray-400">Visa Status</dt>
+                                <dd class="text-emerald-400 font-medium">Spouse Visa</dd>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-800/50">
+                                <dt class="text-gray-400">Availability</dt>
+                                <dd class="text-brand-400 font-medium">Immediate Joiner</dd>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-800/50">
+                                <dt class="text-gray-400">Primary Core Stack</dt>
+                                <dd class="text-indigo-300 font-medium">Python / FastAPI / JavaScript</dd>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-800/50">
+                                <dt class="text-gray-400">Cloud Platforms</dt>
+                                <dd class="text-sky-300 font-medium">Microsoft Azure & AWS</dd>
+                            </div>
+                            <div class="flex justify-between items-center py-2">
+                                <dt class="text-gray-400">Degree</dt>
+                                <dd class="text-white font-medium">B.E. Computer Science</dd>
+                            </div>
+                        </dl>
+
+                        <!-- Quick Action Button -->
+                        <div class="pt-2">
+                            <a href="#contact" class="w-full py-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-center font-medium text-xs text-brand-400 border border-gray-700 block transition-all">
+                                Request Full Employment Records
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-brand-500 tracking-widest uppercase mb-2 font-mono">Technical Capability</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    Tools & Technologies Stack
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Category 1: Backend & Programming -->
+                <div class="glass-card rounded-3xl p-6 border border-gray-800 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl">
+                            <i class="fa-brands fa-python"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-base">Programming & Backend</h3>
+                            <p class="text-xs text-gray-400">Core engineering languages</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-brand-500/30 text-xs text-brand-300 font-mono">Python 3.x</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">FastAPI</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Django</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Flask</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Java Spring Boot</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-indigo-300 font-mono">asyncio</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Front-End Development -->
+                <div class="glass-card rounded-3xl p-6 border border-gray-800 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl">
+                            <i class="fa-brands fa-js"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-base">Front-End Development</h3>
+                            <p class="text-xs text-gray-400">Responsive User Interfaces</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-indigo-500/30 text-xs text-indigo-300 font-mono">JavaScript ES6+</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">HTML5</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">CSS3</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Tailwind CSS</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Responsive Layouts</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">API Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Databases & ORM -->
+                <div class="glass-card rounded-3xl p-6 border border-gray-800 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-base">Databases & Analytics</h3>
+                            <p class="text-xs text-gray-400">Data persistence & ETL</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-sky-500/30 text-xs text-sky-300 font-mono">PostgreSQL</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">MySQL</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Django ORM</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">SQL Optimization</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-emerald-300 font-mono">Pandas</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">NumPy</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">NoSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Security & Integrations -->
+                <div class="glass-card rounded-3xl p-6 border border-gray-800 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-base">Security & Architecture</h3>
+                            <p class="text-xs text-gray-400">Enterprise authentication</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-emerald-500/30 text-xs text-emerald-300 font-mono">OAuth2</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">JWT Tokens</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">API Gateway</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Payment Gateways</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">CRM / ERP Integration</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">ServiceNow API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 5: DevOps & Cloud -->
+                <div class="glass-card rounded-3xl p-6 border border-gray-800 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-cloud"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-base">DevOps & Cloud</h3>
+                            <p class="text-xs text-gray-400">Deployment & CI/CD</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-purple-500/30 text-xs text-purple-300 font-mono">Docker</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Docker Compose</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">GitHub Actions</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Microsoft Azure</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">AWS</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Linux / Shell</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 6: Engineering Practices -->
+                <div class="glass-card rounded-3xl p-6 border border-gray-800 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-code-branch"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-base">Methodologies & Testing</h3>
+                            <p class="text-xs text-gray-400">Quality delivery standards</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-amber-500/30 text-xs text-amber-300 font-mono">Agile / Scrum</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Unit Testing</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Integration Testing</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Git Flow</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Root Cause Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="py-20 relative bg-darkcard/50 border-y border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-brand-500 tracking-widest uppercase mb-2 font-mono">Career History</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    Professional Experience
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Vertical Timeline -->
+            <div class="relative border-l-2 border-gray-800 ml-4 md:ml-32 space-y-12">
+                
+                <!-- Role 1: NTT DATA -->
+                <div class="relative pl-8 group">
+                    <!-- Date Pill on Left (Desktop) -->
+                    <div class="hidden md:block absolute -left-36 top-1 text-right w-28">
+                        <span class="text-xs font-mono font-bold text-brand-400 block">DEC 2024</span>
+                        <span class="text-xs font-mono text-gray-500 block">MAR 2026</span>
+                    </div>
+
+                    <!-- Timeline Marker Icon -->
+                    <div class="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-darkcard border-2 border-brand-500 text-brand-500 flex items-center justify-center text-xs font-bold group-hover:scale-110 group-hover:bg-brand-500 group-hover:text-white transition-all shadow-lg">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+
+                    <!-- Experience Card -->
+                    <div class="glass-card rounded-3xl p-6 md:p-8 border border-gray-800 space-y-4">
+                        <div class="flex flex-wrap items-start justify-between gap-4">
+                            <div>
+                                <div class="inline-block md:hidden text-xs font-mono text-brand-400 mb-1">DEC 2024 – MAR 2026</div>
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">Python Developer</h3>
+                                <p class="text-sm font-semibold text-indigo-400">NTT DATA &nbsp;|&nbsp; <span class="text-gray-400 font-normal">Bangalore, India</span></p>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs font-mono font-medium">Enterprise Solutions</span>
+                        </div>
+
+                        <!-- Highlights List -->
+                        <ul class="space-y-2.5 text-sm text-gray-300 list-disc list-inside marker:text-brand-500">
+                            <li>Built and maintained <strong>15+ backend modules</strong> in Core Python and FastAPI using microservices architecture, clean coding practices, and dependency injection.</li>
+                            <li>Designed <strong>10+ secure REST APIs</strong> using Pydantic, OAuth2, and JWT, integrating <strong>ServiceNow and AI Desk</strong> enterprise systems.</li>
+                            <li>Engineered asynchronous workflows with FastAPI & asyncio, handling <strong>500+ concurrent requests</strong> and reducing response latency by ~30%.</li>
+                            <li>Created ETL pipelines processing <strong>50,000+ daily operational records</strong> using Pandas, NumPy, and Azure Blob Storage, reducing manual reporting effort by 25%.</li>
+                            <li>Managed relational and NoSQL data models with Django ORM, performing schema/query optimizations that improved operational efficiency by <strong>40%</strong>.</li>
+                            <li>Maintained CI/CD pipelines via GitHub Actions and Docker Compose, supporting <strong>5+ production releases monthly</strong> with zero downtime.</li>
+                        </ul>
+
+                        <!-- Skills Used Pills -->
+                        <div class="pt-2 flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">FastAPI</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Python Asyncio</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">OAuth2/JWT</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Azure Blob</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Pandas</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 2: Capgemini -->
+                <div class="relative pl-8 group">
+                    <!-- Date Pill on Left (Desktop) -->
+                    <div class="hidden md:block absolute -left-36 top-1 text-right w-28">
+                        <span class="text-xs font-mono font-bold text-brand-400 block">JUN 2022</span>
+                        <span class="text-xs font-mono text-gray-500 block">SEP 2024</span>
+                    </div>
+
+                    <!-- Timeline Marker Icon -->
+                    <div class="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-darkcard border-2 border-indigo-500 text-indigo-400 flex items-center justify-center text-xs font-bold group-hover:scale-110 group-hover:bg-indigo-500 group-hover:text-white transition-all shadow-lg">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <!-- Experience Card -->
+                    <div class="glass-card rounded-3xl p-6 md:p-8 border border-gray-800 space-y-4">
+                        <div class="flex flex-wrap items-start justify-between gap-4">
+                            <div>
+                                <div class="inline-block md:hidden text-xs font-mono text-indigo-400 mb-1">JUN 2022 – SEP 2024</div>
+                                <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">Python Backend Engineer</h3>
+                                <p class="text-sm font-semibold text-brand-400">Capgemini &nbsp;|&nbsp; <span class="text-gray-400 font-normal">Bangalore, India</span></p>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 text-xs font-mono font-medium">Enterprise Backends</span>
+                        </div>
+
+                        <!-- Highlights List -->
+                        <ul class="space-y-2.5 text-sm text-gray-300 list-disc list-inside marker:text-indigo-400">
+                            <li>Developed web backends using Python, Django, FastAPI, contributing to <strong>10+ core modules</strong> across business domains.</li>
+                            <li>Integrated third-party systems including <strong>Payment Gateways and CRM/ERP platforms</strong> with OAuth2 authentication.</li>
+                            <li>Built and styled client UI screens using <strong>HTML, CSS, and JavaScript</strong> to interface with internal tools and REST endpoints.</li>
+                            <li>Optimized MySQL and PostgreSQL queries via Django ORM, boosting response times by 25% for high-traffic endpoints.</li>
+                            <li>Automated deployments using Docker, GitHub Actions, and Shell scripting, reducing release turnaround times by <strong>40%</strong> and supporting <strong>99.9% uptime</strong>.</li>
+                        </ul>
+
+                        <!-- Skills Used Pills -->
+                        <div class="pt-2 flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Django</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Payment Gateway API</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">JavaScript UI</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">PostgreSQL</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 3: Inventeron Technologies -->
+                <div class="relative pl-8 group">
+                    <!-- Date Pill on Left (Desktop) -->
+                    <div class="hidden md:block absolute -left-36 top-1 text-right w-28">
+                        <span class="text-xs font-mono font-bold text-brand-400 block">DEC 2020</span>
+                        <span class="text-xs font-mono text-gray-500 block">MAR 2022</span>
+                    </div>
+
+                    <!-- Timeline Marker Icon -->
+                    <div class="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-darkcard border-2 border-sky-500 text-sky-400 flex items-center justify-center text-xs font-bold group-hover:scale-110 group-hover:bg-sky-500 group-hover:text-white transition-all shadow-lg">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <!-- Experience Card -->
+                    <div class="glass-card rounded-3xl p-6 md:p-8 border border-gray-800 space-y-4">
+                        <div class="flex flex-wrap items-start justify-between gap-4">
+                            <div>
+                                <div class="inline-block md:hidden text-xs font-mono text-sky-400 mb-1">DEC 2020 – MAR 2022</div>
+                                <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors">Software Developer</h3>
+                                <p class="text-sm font-semibold text-sky-400">Inventeron Technologies &nbsp;|&nbsp; <span class="text-gray-400 font-normal">Bangalore, India</span></p>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-300 border border-sky-500/20 text-xs font-mono font-medium">Software Development</span>
+                        </div>
+
+                        <!-- Highlights List -->
+                        <ul class="space-y-2.5 text-sm text-gray-300 list-disc list-inside marker:text-sky-400">
+                            <li>Assisted in developing and maintaining backend features using <strong>Python and Java Spring Boot</strong> for microservices architectures.</li>
+                            <li>Evaluated technical frameworks through R&D activities to optimize application performance and maintainability.</li>
+                            <li>Wrote clean, modular code following team coding standards, peer reviews, and SDLC Agile practices.</li>
+                            <li>Participated directly in client interactions to clarify technical specifications and deliver required features on time.</li>
+                        </ul>
+
+                        <!-- Skills Used Pills -->
+                        <div class="pt-2 flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Python</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Java Spring Boot</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">SQL</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Agile</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Major Projects Showcase Section -->
+    <section id="projects" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-brand-500 tracking-widest uppercase mb-2 font-mono">Featured Engineering Work</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    Key Systems & Integrations
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Project Card 1 -->
+                <div class="glass-card rounded-3xl p-6 md:p-8 border border-gray-800 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-mono text-brand-400 bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">Microservices Architecture</span>
+                            <i class="fa-solid fa-server text-gray-500 group-hover:text-brand-500 transition-colors text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">
+                            Enterprise Asynchronous Gateway & System Integrator
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Built high-throughput backend services using FastAPI & asyncio supporting 500+ concurrent requests. Integrated ServiceNow and AI Desk platforms with Pydantic schemas, JWT authentication, and automated error recovery.
+                        </p>
+                        <div class="bg-gray-950 p-3 rounded-xl border border-gray-800 font-mono text-xs text-gray-400 space-y-1">
+                            <div><span class="text-emerald-400">✓ Reduced Latency:</span> ~30% improvement</div>
+                            <div><span class="text-indigo-400">✓ Security:</span> OAuth2 / JWT Role-Based Access</div>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800/80 flex items-center justify-between mt-6">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">FastAPI</span>
+                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">OAuth2</span>
+                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">ServiceNow API</span>
+                        </div>
+                        <button onclick="showProjectDetails('Project 1: Asynchronous Gateway')" class="text-xs text-brand-500 hover:text-brand-400 font-semibold flex items-center gap-1">
+                            Details <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="glass-card rounded-3xl p-6 md:p-8 border border-gray-800 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-mono text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">ETL & Data Pipeline</span>
+                            <i class="fa-solid fa-chart-line text-gray-500 group-hover:text-indigo-400 transition-colors text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">
+                            Operational Infrastructure Analytics Pipeline
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Designed automated data transformation workflows processing 50,000+ operational records daily. Leveraged Pandas and NumPy with Azure Blob Storage backend to power enterprise reporting dashboards.
+                        </p>
+                        <div class="bg-gray-950 p-3 rounded-xl border border-gray-800 font-mono text-xs text-gray-400 space-y-1">
+                            <div><span class="text-emerald-400">✓ Efficiency:</span> Reduced manual reporting by ~25%</div>
+                            <div><span class="text-sky-400">✓ Storage:</span> Azure Blob Storage Integration</div>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800/80 flex items-center justify-between mt-6">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Pandas</span>
+                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Azure Blob</span>
+                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">NumPy</span>
+                        </div>
+                        <button onclick="showProjectDetails('Project 2: Infrastructure Analytics')" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold flex items-center gap-1">
+                            Details <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="glass-card rounded-3xl p-6 md:p-8 border border-gray-800 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">FinTech & ERP Integration</span>
+                            <i class="fa-solid fa-credit-card text-gray-500 group-hover:text-emerald-400 transition-colors text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                            Payment Gateway & CRM/ERP Middleware
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Architected scalable Django ORM microservices integrating secure third-party payment gateways and ERP platforms. Optimized schema indexes and queries, maintaining 99.9% uptime across production endpoints.
+                        </p>
+                        <div class="bg-gray-950 p-3 rounded-xl border border-gray-800 font-mono text-xs text-gray-400 space-y-1">
+                            <div><span class="text-emerald-400">✓ Availability:</span> 99.9% Uptime Achieved</div>
+                            <div><span class="text-yellow-400">✓ DB Speed:</span> Query response boosted by 25%</div>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800/80 flex items-center justify-between mt-6">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Django ORM</span>
+                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">PostgreSQL</span>
+                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Payment API</span>
+                        </div>
+                        <button onclick="showProjectDetails('Project 3: Payment Gateway & ERP')" class="text-xs text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">
+                            Details <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="glass-card rounded-3xl p-6 md:p-8 border border-gray-800 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-mono text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">Full-Stack Internal Dashboard</span>
+                            <i class="fa-solid fa-desktop text-gray-500 group-hover:text-sky-400 transition-colors text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors">
+                            Enterprise Internal Admin Tools & Portal UI
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Built interactive front-end screens and toolings using HTML, CSS, and modern JavaScript connected seamlessly to FastAPI backend REST endpoints for internal monitoring and administrative workflows.
+                        </p>
+                        <div class="bg-gray-950 p-3 rounded-xl border border-gray-800 font-mono text-xs text-gray-400 space-y-1">
+                            <div><span class="text-emerald-400">✓ Deployment:</span> Automated CI/CD via Docker & GitHub Actions</div>
+                            <div><span class="text-indigo-400">✓ DevOps:</span> Cut turnaround release time by 40%</div>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800/80 flex items-center justify-between mt-6">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">JavaScript</span>
+                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Docker</span>
+                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">GitHub Actions</span>
+                        </div>
+                        <button onclick="showProjectDetails('Project 4: Admin Portal')" class="text-xs text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-1">
+                            Details <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 relative bg-darkcard/50 border-y border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-brand-500 tracking-widest uppercase mb-2 font-mono">Credentials</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    Professional Certifications
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Certifications Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Cert 1: Azure AI Engineer -->
+                <div class="glass-card p-6 rounded-2xl border border-gray-800 flex items-center gap-4 hover:border-brand-500/40 transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fa-brands fa-microsoft"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Azure AI Engineer Associate</h4>
+                        <p class="text-xs text-brand-400 font-medium mt-0.5">Microsoft Certified</p>
+                        <span class="inline-block text-[10px] text-gray-400 font-mono mt-1 bg-gray-900 px-2 py-0.5 rounded">Cloud & AI Integration</span>
+                    </div>
+                </div>
+
+                <!-- Cert 2: AWS Cloud Practitioner -->
+                <div class="glass-card p-6 rounded-2xl border border-gray-800 flex items-center gap-4 hover:border-amber-500/40 transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fa-brands fa-aws"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">AWS Cloud Practitioner</h4>
+                        <p class="text-xs text-amber-400 font-medium mt-0.5">Amazon Web Services</p>
+                        <span class="inline-block text-[10px] text-gray-400 font-mono mt-1 bg-gray-900 px-2 py-0.5 rounded">Cloud Computing</span>
+                    </div>
+                </div>
+
+                <!-- Cert 3: Generative AI Google -->
+                <div class="glass-card p-6 rounded-2xl border border-gray-800 flex items-center gap-4 hover:border-emerald-500/40 transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fa-brands fa-google"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Generative AI for Developers</h4>
+                        <p class="text-xs text-emerald-400 font-medium mt-0.5">Google / GeeksforGeeks</p>
+                        <span class="inline-block text-[10px] text-gray-400 font-mono mt-1 bg-gray-900 px-2 py-0.5 rounded">Generative AI</span>
+                    </div>
+                </div>
+
+                <!-- Cert 4: Prompt Literacy DCAI -->
+                <div class="glass-card p-6 rounded-2xl border border-gray-800 flex items-center gap-4 hover:border-purple-500/40 transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Prompt Literacy Certificate</h4>
+                        <p class="text-xs text-purple-400 font-medium mt-0.5">DCAI Certification</p>
+                        <span class="inline-block text-[10px] text-gray-400 font-mono mt-1 bg-gray-900 px-2 py-0.5 rounded">AI System Design</span>
+                    </div>
+                </div>
+
+                <!-- Cert 5: Generative AI Coursera -->
+                <div class="glass-card p-6 rounded-2xl border border-gray-800 flex items-center gap-4 hover:border-indigo-500/40 transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Generative AI Specialization</h4>
+                        <p class="text-xs text-indigo-400 font-medium mt-0.5">Coursera</p>
+                        <span class="inline-block text-[10px] text-gray-400 font-mono mt-1 bg-gray-900 px-2 py-0.5 rounded">Deep Learning</span>
+                    </div>
+                </div>
+
+                <!-- Cert 6: ITIL4 -->
+                <div class="glass-card p-6 rounded-2xl border border-gray-800 flex items-center gap-4 hover:border-red-500/40 transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">ITIL4 Framework</h4>
+                        <p class="text-xs text-red-400 font-medium mt-0.5">Axelos</p>
+                        <span class="inline-block text-[10px] text-gray-400 font-mono mt-1 bg-gray-900 px-2 py-0.5 rounded">IT Service Management</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Education Box -->
+            <div class="mt-12 glass-panel p-6 sm:p-8 rounded-3xl border border-gray-800 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fa-solid fa-university"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-mono text-brand-400">2016 – 2020</span>
+                        <h3 class="text-lg font-bold text-white">Bachelor of Computer Science and Engineering</h3>
+                        <p class="text-xs text-gray-400">Vishweshwaraiah Technological University</p>
+                    </div>
+                </div>
+                <div class="px-4 py-2 rounded-xl bg-gray-900 text-xs font-mono text-gray-300 border border-gray-800">
+                    Degree Completed · CS & Software Engineering
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-brand-500 tracking-widest uppercase mb-2 font-mono">Get In Touch</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    Let's Build Something Exceptional
+                </p>
+                <p class="text-sm text-gray-400 mt-2">Currently available in Dubai, UAE for full-stack and backend roles.</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Direct Badges -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-card p-6 rounded-3xl border border-gray-800 space-y-6">
+                        <h3 class="text-xl font-bold text-white border-b border-gray-800 pb-4">Direct Contact Details</h3>
+                        
+                        <!-- Email Badge -->
+                        <div class="flex items-center justify-between p-4 rounded-2xl bg-gray-950/60 border border-gray-800/80 group">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-gray-400 font-mono block">EMAIL ADDRESS</span>
+                                    <span class="text-sm font-semibold text-white">suhaima412@gmail.com</span>
+                                </div>
+                            </div>
+                            <button onclick="copyToClipboard('suhaima412@gmail.com', 'Email')" class="p-2 text-gray-400 hover:text-brand-500 transition-colors" title="Copy Email">
+                                <i class="fa-solid fa-copy"></i>
+                            </button>
+                        </div>
+
+                        <!-- Phone Badge -->
+                        <div class="flex items-center justify-between p-4 rounded-2xl bg-gray-950/60 border border-gray-800/80 group">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-gray-400 font-mono block">PHONE / WHATSAPP</span>
+                                    <span class="text-sm font-semibold text-white">+971-551869330</span>
+                                </div>
+                            </div>
+                            <button onclick="copyToClipboard('+971551869330', 'Phone')" class="p-2 text-gray-400 hover:text-indigo-400 transition-colors" title="Copy Phone">
+                                <i class="fa-solid fa-copy"></i>
+                            </button>
+                        </div>
+
+                        <!-- Location & Visa Badge -->
+                        <div class="p-4 rounded-2xl bg-gray-950/60 border border-gray-800/80 space-y-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg shrink-0">
+                                    <i class="fa-solid fa-id-card"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-gray-400 font-mono block">RESIDENCY & VISA STATUS</span>
+                                    <span class="text-sm font-semibold text-white">Dubai, UAE · Spouse Visa</span>
+                                </div>
+                            </div>
+                            <div class="text-xs text-emerald-400 font-mono pt-1 flex items-center gap-1.5 pl-1">
+                                <i class="fa-solid fa-circle-check"></i> Immediate Joiner (Zero Notice Period)
+                            </div>
+                        </div>
+
+                        <!-- Social Link -->
+                        <a href="https://linkedin.com/in/syeda-suhaima-banu" target="_blank" class="flex items-center justify-center gap-2 p-3.5 rounded-2xl bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-600 hover:to-indigo-600 text-white font-semibold text-xs shadow-lg transition-all">
+                            <i class="fa-brands fa-linkedin text-base"></i> View LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Interactive Form -->
+                <div class="lg:col-span-7">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="glass-card p-6 sm:p-8 rounded-3xl border border-gray-800 space-y-5">
+                        <h3 class="text-xl font-bold text-white mb-2">Send Message</h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-mono text-gray-400 mb-1.5">Your Name</label>
+                                <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-gray-950 border border-gray-800 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-mono text-gray-400 mb-1.5">Email Address</label>
+                                <input type="email" required placeholder="john@company.com" class="w-full px-4 py-3 rounded-xl bg-gray-950 border border-gray-800 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono text-gray-400 mb-1.5">Subject / Opportunity Title</label>
+                            <input type="text" required placeholder="Full-Stack Engineer Position" class="w-full px-4 py-3 rounded-xl bg-gray-950 border border-gray-800 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono text-gray-400 mb-1.5">Message</label>
+                            <textarea rows="4" required placeholder="Hello Syeda, we are looking for a Python & JavaScript engineer in Dubai..." class="w-full px-4 py-3 rounded-xl bg-gray-950 border border-gray-800 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-semibold text-sm shadow-xl shadow-brand-500/20 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Send Direct Message
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800/80 bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+            <div>
+                &copy; <span id="year"></span> Syeda Suhaima Banu. All rights reserved.
+            </div>
+            <div class="flex items-center gap-6">
+                <span>Dubai, United Arab Emirates</span>
+                <a href="#hero" class="text-brand-500 hover:underline">Back to top <i class="fa-solid fa-arrow-up"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Resume View Modal Overlay -->
+    <div id="resume-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="glass-panel w-full max-w-3xl rounded-3xl border border-gray-700 p-6 sm:p-8 space-y-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeResumeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="border-b border-gray-800 pb-4">
+                <h3 class="text-2xl font-bold text-white">Syeda Suhaima Banu</h3>
+                <p class="text-xs text-brand-500 font-mono mt-1">Full-Stack Developer | Python & JavaScript | REST APIs & System Integration</p>
+                <p class="text-xs text-gray-400 mt-0.5">Dubai, UAE · +971-551869330 · suhaima412@gmail.com</p>
+            </div>
+
+            <div class="space-y-4 text-xs text-gray-300">
+                <h4 class="font-bold text-sm text-white uppercase tracking-wider font-mono text-brand-400">Professional Summary</h4>
+                <p class="leading-relaxed">
+                    Full-Stack Developer with 5+ years of experience building and maintaining web applications, REST APIs, microservices, and system integrations. Backend-strong in Python, Django, FastAPI, Flask, SQL, MySQL, PostgreSQL and NoSQL, with hands-on front-end work in HTML, CSS and JavaScript. Experienced integrating third-party services including payment gateways and CRM/ERP systems, with authentication/authorization, performance optimization, troubleshooting, testing, monitoring, Docker, Git, CI/CD, Azure and AWS.
+                </p>
+
+                <h4 class="font-bold text-sm text-white uppercase tracking-wider font-mono text-brand-400 pt-2">Key Work Highlights</h4>
+                <ul class="list-disc list-inside space-y-1.5 text-gray-300">
+                    <li><strong>NTT DATA (Dec 2024 - Mar 2026):</strong> Built 15+ Core Python & FastAPI microservices; 10+ REST APIs integrating ServiceNow and AI Desk; 50k+ daily record ETL pipelines.</li>
+                    <li><strong>Capgemini (Jun 2022 - Sep 2024):</strong> Developed 10+ backend modules; payment gateway & CRM/ERP integrations; front-end HTML/CSS/JS screens; 99.9% uptime.</li>
+                    <li><strong>Inventeron Technologies (Dec 2020 - Mar 2022):</strong> Python & Java Spring Boot microservices, client requirement discussions, Agile delivery.</li>
+                </ul>
+            </div>
+
+            <div class="pt-4 border-t border-gray-800 flex flex-wrap justify-between items-center gap-4">
+                <span class="text-xs text-emerald-400 font-mono"><i class="fa-solid fa-check"></i> Spouse Visa · Immediate Joiner</span>
+                <div class="flex gap-3">
+                    <button onclick="closeResumeModal()" class="px-4 py-2 rounded-xl bg-gray-800 text-xs font-semibold text-gray-300 hover:bg-gray-700">Close</button>
+                    <button onclick="printResume()" class="px-4 py-2 rounded-xl bg-brand-600 text-xs font-semibold text-white hover:bg-brand-500 shadow-lg">Print / Save PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast Element -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 glass-panel px-5 py-3 rounded-2xl border border-brand-500/50 text-white text-xs font-medium flex items-center gap-3 shadow-2xl">
+        <div id="toast-icon" class="text-brand-500 text-base"></div>
+        <span id="toast-msg">Notification Message</span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Set Year in Footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close Mobile menu when clicking any nav link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Typewriter Effect
+        const roles = [
+            "Full-Stack Developer",
+            "Python & FastAPI Specialist",
+            "REST API & Microservices Architect",
+            "Data Pipeline & System Integrator"
+        ];
+        let roleIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+        const typewriterEl = document.getElementById('typewriter');
+
+        function typeEffect() {
+            const currentRole = roles[roleIdx];
+            if (isDeleting) {
+                typewriterEl.textContent = currentRole.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                typewriterEl.textContent = currentRole.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            let typeSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIdx === currentRole.length) {
+                typeSpeed = 2200; // Pause at full text
+                isDeleting = true;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                roleIdx = (roleIdx + 1) % roles.length;
+                typeSpeed = 400;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+        document.addEventListener('DOMContentLoaded', typeEffect);
+
+        // Resume Modal Controls
+        function openResumeModal() {
+            document.getElementById('resume-modal').classList.remove('hidden');
+        }
+        function closeResumeModal() {
+            document.getElementById('resume-modal').classList.add('hidden');
+        }
+
+        // Copy to Clipboard Utility
+        function copyToClipboard(text, label) {
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast(`${label} copied to clipboard!`, 'fa-solid fa-circle-check');
+        }
+
+        // Show Project Details Popup Notification
+        function showProjectDetails(projectName) {
+            showToast(`Viewing details for ${projectName}`, 'fa-solid fa-circle-info');
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            showToast('Thank you! Your message has been sent successfully.', 'fa-solid fa-paper-plane');
+            document.getElementById('contact-form').reset();
+        }
+
+        // Print/Download Resume Simulation
+        function printResume() {
+            window.print();
+        }
+
+        // Toast Notification Function
+        function showToast(message, iconClass) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastMsg.textContent = message;
+            toastIcon.className = iconClass;
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
