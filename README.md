@@ -2,7 +2,7 @@
 
 ### Python Backend Engineer | AI Engineer | Automation & Integration Specialist
 
-📍 **Dubai, UAE** · **Immediate Joiner** · **Spouse Visa**
+📍 **Dubai, UAE** · **Immediate Joiner** · **Residence Visa**
 
 🌐 **Portfolio:** [Visit My Portfolio](YOUR_VERCEL_PORTFOLIO_URL)
 💼 **LinkedIn:** [linkedin.com/in/syeda-suhaima-banu](https://www.linkedin.com/in/syeda-suhaima-banu)
