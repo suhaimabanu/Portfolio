@@ -91,7 +91,7 @@ Currently focused on building practical AI applications that combine strong soft
 
 ## 💼 Professional Experience
 
-### Systems Integration Analyst — NTT DATA
+### Python Full Stack Developer — NTT DATA
 
 **Bangalore, India**
 

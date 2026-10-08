@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syeda Suhaima Banu | Full-Stack Developer & Backend Specialist</title>
+    <title>Syeda Suhaima Banu | Backend Developer Moving Towards AI Engineering</title>
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
@@ -69,6 +68,81 @@
             overflow-x: hidden;
         }
 
+        body.light-theme {
+            background-color: #f3f7f6;
+            color: #17212b;
+        }
+
+        body.light-theme .glass-panel,
+        body.light-theme .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(71, 85, 105, 0.2);
+        }
+
+        body.light-theme [class*="text-white"],
+        body.light-theme [class*="text-gray-100"],
+        body.light-theme [class*="text-gray-200"],
+        body.light-theme [class*="text-gray-300"] {
+            color: #1f2937 !important;
+        }
+
+        body.light-theme [class*="text-gray-400"],
+        body.light-theme [class*="text-gray-500"] {
+            color: #526170 !important;
+        }
+
+        body.light-theme [class*="bg-gray-950"],
+        body.light-theme [class*="bg-gray-900"],
+        body.light-theme [class*="bg-gray-800"],
+        body.light-theme [class*="bg-darkcard"],
+        body.light-theme [class*="bg-darkborder"] {
+            background-color: #e8efee !important;
+        }
+
+        body.light-theme [class*="border-gray-"] {
+            border-color: rgba(71, 85, 105, 0.2) !important;
+        }
+
+        body.light-theme .gradient-border > div {
+            background: #fff;
+        }
+
+        @media print {
+            body * {
+                visibility: hidden !important;
+            }
+
+            #resume-modal,
+            #resume-modal * {
+                visibility: visible !important;
+            }
+
+            #resume-modal {
+                display: block !important;
+                position: absolute !important;
+                inset: 0 !important;
+                padding: 0 !important;
+                background: #fff !important;
+                color: #111827 !important;
+                overflow: visible !important;
+            }
+
+            #resume-modal > div {
+                width: 100% !important;
+                max-width: none !important;
+                max-height: none !important;
+                overflow: visible !important;
+                border: 0 !important;
+                box-shadow: none !important;
+                background: #fff !important;
+                color: #111827 !important;
+            }
+
+            #resume-modal button {
+                display: none !important;
+            }
+        }
+
         .glass-panel {
             background: rgba(17, 24, 39, 0.75);
             backdrop-filter: blur(16px);
@@ -107,6 +181,122 @@
             border-radius: calc(1rem - 1px);
         }
 
+        /* Header */
+        html { scroll-padding-top: 6rem; }
+
+        .nav-shell {
+            background: rgba(11, 15, 25, 0.72);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        #navbar.is-scrolled .nav-shell {
+            background: rgba(11, 15, 25, 0.92);
+            box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.6);
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.625rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #cbd5e1;
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .nav-link.is-active {
+            color: #2dd4bf;
+            background: rgba(20, 184, 166, 0.1);
+        }
+
+        .nav-link-block {
+            display: block;
+            padding: 0.75rem 1rem;
+        }
+
+        .nav-btn {
+            height: 2.5rem;
+            padding: 0 1rem;
+            border-radius: 0.625rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn-outline {
+            color: #e5e7eb;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: transparent;
+        }
+
+        .nav-btn-outline:hover {
+            border-color: rgba(20, 184, 166, 0.6);
+            color: #2dd4bf;
+        }
+
+        .nav-btn-primary {
+            color: #fff;
+            background: #0d9488;
+            box-shadow: 0 4px 14px -4px rgba(20, 184, 166, 0.5);
+        }
+
+        .nav-btn-primary:hover {
+            background: #14b8a6;
+        }
+
+        .nav-icon-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.625rem;
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            transition: all 0.2s ease;
+        }
+
+        .nav-icon-btn:hover {
+            color: #2dd4bf;
+            border-color: rgba(20, 184, 166, 0.6);
+        }
+
+        .nav-btn:focus-visible,
+        .nav-icon-btn:focus-visible,
+        .nav-link:focus-visible {
+            outline: 2px solid #14b8a6;
+            outline-offset: 2px;
+        }
+
+        body.light-theme .nav-shell {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(71, 85, 105, 0.18);
+        }
+
+        body.light-theme #navbar.is-scrolled .nav-shell {
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 10px 30px -14px rgba(15, 23, 42, 0.25);
+        }
+
+        body.light-theme .nav-link { color: #334155; }
+        body.light-theme .nav-link:hover { color: #0f172a; background: rgba(15, 23, 42, 0.05); }
+        body.light-theme .nav-link.is-active { color: #0f766e; background: rgba(20, 184, 166, 0.12); }
+        body.light-theme .nav-btn-outline,
+        body.light-theme .nav-icon-btn { color: #334155; border-color: rgba(71, 85, 105, 0.3); }
+        body.light-theme .nav-btn-outline:hover,
+        body.light-theme .nav-icon-btn:hover { color: #0f766e; border-color: #0d9488; }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -136,62 +326,66 @@
 
     <!-- Sticky Navigation Bar -->
     <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20 glass-panel rounded-b-2xl px-6 my-2 border-t-0 shadow-xl">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-3">
+            <div id="navbar-inner" class="nav-shell flex items-center justify-between gap-3 h-16 px-3 sm:px-5 rounded-2xl">
                 <!-- Logo / Brand -->
-                <a href="#hero" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-indigo-600 flex items-center justify-center text-white font-bold font-mono text-lg shadow-lg group-hover:scale-105 transition-transform">
+                <a href="#hero" class="flex items-center gap-3 group min-w-0" aria-label="Syeda Suhaima Banu - back to top">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-indigo-600 flex items-center justify-center text-white font-bold font-mono text-base shadow-lg shrink-0 group-hover:scale-105 transition-transform">
                         SB
                     </div>
-                    <div>
-                        <span class="font-bold text-lg tracking-tight text-white group-hover:text-brand-500 transition-colors">Syeda Suhaima</span>
-                        <span class="block text-xs text-gray-400 font-mono">Full-Stack Developer</span>
+                    <div class="leading-tight min-w-0">
+                        <span class="block font-bold text-[15px] tracking-tight text-white truncate">Syeda Suhaima</span>
+                        <span class="block text-[11px] text-gray-400 font-mono truncate">Backend Developer</span>
                     </div>
                 </a>
 
                 <!-- Desktop Nav Links -->
-                <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
-                    <a href="#about" class="hover:text-brand-500 transition-colors">About</a>
-                    <a href="#skills" class="hover:text-brand-500 transition-colors">Skills</a>
-                    <a href="#experience" class="hover:text-brand-500 transition-colors">Experience</a>
-                    <a href="#projects" class="hover:text-brand-500 transition-colors">Projects</a>
-                    <a href="#certifications" class="hover:text-brand-500 transition-colors">Certifications</a>
-                    <a href="#contact" class="hover:text-brand-500 transition-colors">Contact</a>
+                <nav class="hidden lg:flex items-center gap-1" aria-label="Primary">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#certifications" class="nav-link">Certifications</a>
+                    <a href="#contact" class="nav-link">Contact</a>
                 </nav>
 
                 <!-- Header Actions -->
-                <div class="hidden sm:flex items-center gap-3">
-                    <button onclick="openResumeModal()" class="px-4 py-2 rounded-xl bg-darkborder hover:bg-gray-800 text-xs font-semibold text-gray-200 border border-gray-700 transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-file-pdf text-brand-500"></i> Resume
+                <div class="flex items-center gap-2 shrink-0">
+                    <button id="theme-toggle" type="button" onclick="toggleTheme()" class="nav-icon-btn" aria-label="Switch to light mode" title="Switch to light mode">
+                        <i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i>
                     </button>
-                    <a href="#contact" class="px-5 py-2 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-xs font-semibold text-white shadow-lg hover:shadow-brand-500/25 transition-all">
+                    <button type="button" onclick="openResumeModal()" class="nav-btn nav-btn-outline hidden md:inline-flex">
+                        <i class="fa-regular fa-file-lines" aria-hidden="true"></i> Resume
+                    </button>
+                    <a href="#contact" class="nav-btn nav-btn-primary hidden sm:inline-flex">
                         Hire Me
                     </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white p-2 focus:outline-none">
-                    <i class="fa-solid fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto px-4 mt-2">
-            <div class="glass-panel rounded-2xl p-6 space-y-4 shadow-2xl border border-gray-800">
-                <a href="#about" class="mobile-link block text-gray-300 hover:text-brand-500 font-medium">About</a>
-                <a href="#skills" class="mobile-link block text-gray-300 hover:text-brand-500 font-medium">Skills</a>
-                <a href="#experience" class="mobile-link block text-gray-300 hover:text-brand-500 font-medium">Experience</a>
-                <a href="#projects" class="mobile-link block text-gray-300 hover:text-brand-500 font-medium">Projects</a>
-                <a href="#certifications" class="mobile-link block text-gray-300 hover:text-brand-500 font-medium">Certifications</a>
-                <a href="#contact" class="mobile-link block text-gray-300 hover:text-brand-500 font-medium">Contact</a>
-                <div class="pt-4 border-t border-gray-800 flex flex-col gap-3">
-                    <button onclick="openResumeModal()" class="w-full py-2.5 rounded-xl bg-darkborder text-xs font-semibold text-gray-200 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-file-pdf text-brand-500"></i> View Resume
+                    <!-- Mobile Menu Button -->
+                    <button id="menu-btn" type="button" class="nav-icon-btn lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <i id="menu-icon" class="fa-solid fa-bars" aria-hidden="true"></i>
                     </button>
-                    <a href="#contact" class="mobile-link w-full py-2.5 text-center rounded-xl bg-brand-600 text-xs font-semibold text-white">
-                        Get In Touch
-                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-2">
+                <div class="nav-shell rounded-2xl p-3 shadow-2xl">
+                    <nav class="grid grid-cols-1 sm:grid-cols-2 gap-1" aria-label="Mobile">
+                        <a href="#about" class="mobile-link nav-link nav-link-block">About</a>
+                        <a href="#skills" class="mobile-link nav-link nav-link-block">Skills</a>
+                        <a href="#experience" class="mobile-link nav-link nav-link-block">Experience</a>
+                        <a href="#projects" class="mobile-link nav-link nav-link-block">Projects</a>
+                        <a href="#certifications" class="mobile-link nav-link nav-link-block">Certifications</a>
+                        <a href="#contact" class="mobile-link nav-link nav-link-block">Contact</a>
+                    </nav>
+                    <div class="mt-3 pt-3 border-t border-gray-800 grid grid-cols-2 gap-2">
+                        <button type="button" onclick="openResumeModal()" class="mobile-link nav-btn nav-btn-outline w-full justify-center">
+                            <i class="fa-regular fa-file-lines" aria-hidden="true"></i> Resume
+                        </button>
+                        <a href="#contact" class="mobile-link nav-btn nav-btn-primary w-full justify-center">
+                            Hire Me
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -209,37 +403,37 @@
                 <!-- Left Hero Content -->
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
                     <!-- Location Status Pill -->
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-xs font-semibold">
+                    <div class="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-xs font-semibold text-center">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                        <i class="fa-solid fa-location-dot"></i> Dubai, UAE &nbsp;|&nbsp; <span class="text-gray-300">Spouse Visa (Immediate Joiner)</span>
+                        <i class="fa-solid fa-location-dot"></i> Dubai, UAE &nbsp;|&nbsp; <span class="text-gray-300">Residence Visa (Immediate Joiner)</span>
                     </div>
 
                     <!-- Main Heading -->
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
                         Hi, I'm <span class="gradient-text">Syeda Suhaima</span>
                         <span class="block text-2xl sm:text-3xl lg:text-4xl text-gray-300 font-semibold mt-2">
-                            Full-Stack & Backend Engineer
+                            Backend Developer <span class="text-brand-500">|</span> Moving Towards AI Engineer
                         </span>
                     </h1>
 
                     <!-- Animated Typewriter Role -->
-                    <div class="text-lg sm:text-xl font-mono text-gray-400 h-8 flex items-center justify-center lg:justify-start">
+                    <div class="text-sm sm:text-lg lg:text-xl font-mono text-gray-400 min-h-[2rem] flex items-center justify-center lg:justify-start">
                         <span class="text-brand-500 font-semibold mr-2">&gt;</span>
                         <span id="typewriter" class="typing-cursor text-indigo-400 font-medium"></span>
                     </div>
 
                     <!-- Brief Pitch -->
                     <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        With <strong class="text-gray-200">5+ years of experience</strong> building high-throughput microservices, REST APIs, and system integrations using <strong class="text-brand-500">Python, Django, FastAPI, SQL</strong>, and modern JavaScript. Proven record in handling 500+ concurrent req/sec and daily ETL pipelines with 50,000+ records.
+                        With <strong class="text-gray-200">5+ years of software development experience</strong> across backend and full-stack engineering, building APIs, microservices, and integrations with <strong class="text-brand-500">Python, Django, FastAPI, SQL</strong>, and JavaScript. Now moving toward AI Engineering through hands-on LLM, RAG, and GenAI projects.
                     </p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#contact" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-500 to-indigo-600 hover:from-brand-600 hover:to-indigo-700 text-white font-semibold text-sm shadow-xl shadow-brand-500/20 hover:scale-[1.02] transition-all flex items-center gap-2">
+                        <a href="#contact" class="w-full sm:w-auto justify-center px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-500 to-indigo-600 hover:from-brand-600 hover:to-indigo-700 text-white font-semibold text-sm shadow-xl shadow-brand-500/20 hover:scale-[1.02] transition-all flex items-center gap-2">
                             <i class="fa-solid fa-paper-plane"></i> Let's Connect
                         </a>
-                        <button onclick="openResumeModal()" class="px-6 py-3.5 rounded-xl bg-darkcard hover:bg-gray-800 text-gray-200 font-semibold text-sm border border-gray-700 hover:border-gray-600 transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-file-arrow-down text-brand-500"></i> View Resume PDF
+                        <button onclick="openResumeModal()" class="flex-1 sm:flex-none justify-center px-6 py-3.5 rounded-xl bg-darkcard hover:bg-gray-800 text-gray-200 font-semibold text-sm border border-gray-700 hover:border-gray-600 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-file-arrow-down text-brand-500"></i> Preview / Save Resume PDF
                         </button>
                         <a href="https://linkedin.com/in/syeda-suhaima-banu" target="_blank" class="p-3.5 rounded-xl bg-darkcard hover:bg-gray-800 text-gray-300 hover:text-brand-500 border border-gray-700 transition-all" title="LinkedIn Profile">
                             <i class="fa-brands fa-linkedin-in text-lg"></i>
@@ -253,16 +447,16 @@
                             <div class="text-xs text-gray-400">Years Experience</div>
                         </div>
                         <div class="text-center lg:text-left">
-                            <div class="text-2xl sm:text-3xl font-extrabold text-brand-500 font-mono">15+</div>
-                            <div class="text-xs text-gray-400">Backend Modules</div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-brand-500 font-mono">10+</div>
+                            <div class="text-xs text-gray-400">REST APIs</div>
                         </div>
                         <div class="text-center lg:text-left">
-                            <div class="text-2xl sm:text-3xl font-extrabold text-indigo-400 font-mono">50K+</div>
-                            <div class="text-xs text-gray-400">Daily Records ETL</div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-indigo-400 font-mono">10K+</div>
+                            <div class="text-xs text-gray-400">Users per Client</div>
                         </div>
                         <div class="text-center lg:text-left">
-                            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">99.9%</div>
-                            <div class="text-xs text-gray-400">Uptime Delivery</div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">40%</div>
+                            <div class="text-xs text-gray-400">Efficiency Improvement</div>
                         </div>
                     </div>
                 </div>
@@ -273,7 +467,7 @@
                         <!-- Card Glow Frame -->
                         <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-indigo-600 rounded-3xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
 
-                        <div class="relative glass-card rounded-3xl p-6 border border-gray-700 shadow-2xl space-y-6">
+                        <div class="relative glass-card rounded-3xl p-5 sm:p-6 border border-gray-700 shadow-2xl space-y-6">
                             
                             <!-- Profile Header -->
                             <div class="flex items-center gap-4">
@@ -281,22 +475,14 @@
                                     <!-- Avatar Image Container -->
                                     <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-brand-500 to-indigo-600 p-0.5 overflow-hidden shadow-xl">
                                         <div class="w-full h-full bg-gray-900 rounded-[14px] flex items-center justify-center overflow-hidden">
-                                            <!-- SVG Developer Avatar Illustration -->
-                                            <svg class="w-full h-full text-brand-500" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect width="100" height="100" fill="#111827"/>
-                                                <circle cx="50" cy="40" r="22" fill="#1f2937" stroke="#14b8a6" stroke-width="2"/>
-                                                <path d="M50 20C40 20 32 28 32 38C32 42 34 46 37 49C35 52 30 58 30 65H70C70 58 65 52 63 49C66 46 68 42 68 38C68 28 60 20 50 20Z" fill="#0f766e"/>
-                                                <path d="M20 90C20 72 33 60 50 60C67 60 80 72 80 90H20Z" fill="#14b8a6" opacity="0.8"/>
-                                                <circle cx="43" cy="38" r="3" fill="#ffffff"/>
-                                                <circle cx="57" cy="38" r="3" fill="#ffffff"/>
-                                            </svg>
+                                            <img src="Resume/syeda-profile.jpeg" alt="Syeda Suhaima Banu" class="w-full h-full object-cover object-center">
                                         </div>
                                     </div>
                                     <span class="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 border-2 border-darkcard rounded-full" title="Available Immediately"></span>
                                 </div>
-                                <div>
+                                <div class="min-w-0">
                                     <h3 class="font-bold text-lg text-white">Syeda Suhaima Banu</h3>
-                                    <p class="text-xs text-brand-500 font-mono">suhaima412@gmail.com</p>
+                                    <p class="text-xs text-brand-500 font-mono break-all">suhaima412@gmail.com</p>
                                     <p class="text-xs text-gray-400 mt-1 flex items-center gap-1">
                                         <i class="fa-solid fa-phone text-gray-500"></i> +971-551869330
                                     </p>
@@ -310,17 +496,17 @@
                                         <span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span>
                                         <span class="w-2.5 h-2.5 rounded-full bg-yellow-500 inline-block"></span>
                                         <span class="w-2.5 h-2.5 rounded-full bg-green-500 inline-block"></span>
-                                        <span class="ml-2 font-semibold text-gray-400">suhaima-api-node.py</span>
+                                        <span class="ml-2 font-semibold text-gray-400">syeda-api-service.py</span>
                                     </span>
-                                    <span class="text-emerald-400"><i class="fa-solid fa-circle-check"></i> Active</span>
+                                    <span class="text-emerald-400"><i class="fa-solid fa-circle-check"></i> API</span>
                                 </div>
-                                <div class="space-y-1.5 pt-1">
+                                <div class="space-y-1.5 pt-1 break-words">
                                     <div class="text-gray-400"><span class="text-indigo-400">from</span> fastapi <span class="text-indigo-400">import</span> FastAPI, Depends</div>
-                                    <div class="text-gray-400"><span class="text-brand-500">app</span> = FastAPI(title=<span class="text-emerald-300">"Enterprise Gateway"</span>)</div>
-                                    <div class="text-gray-500"># Handling 500+ async req/sec</div>
+                                    <div class="text-gray-400"><span class="text-brand-500">app</span> = FastAPI(title=<span class="text-emerald-300">"Backend API"</span>)</div>
+                                    <div class="text-gray-500"># REST APIs and microservice integrations</div>
                                     <div class="text-emerald-400 flex justify-between pt-1">
-                                        <span>STATUS: 200 OK</span>
-                                        <span class="text-gray-400">Response: ~30ms</span>
+                                        <span>EXAMPLE: 200 OK</span>
+                                        <span class="text-gray-400">Request validated</span>
                                     </div>
                                 </div>
                             </div>
@@ -344,12 +530,12 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 relative bg-darkcard/50 border-y border-gray-800/60">
+    <section id="about" class="py-16 sm:py-20 relative bg-darkcard/50 border-y border-gray-800/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
                 <h2 class="text-xs font-semibold text-brand-500 tracking-widest uppercase mb-2 font-mono">Professional Background</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                <p class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
                     Architecting Secure, High-Performance Systems
                 </p>
                 <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-indigo-500 mx-auto mt-4 rounded-full"></div>
@@ -359,13 +545,13 @@
                 <!-- Detailed Bio -->
                 <div class="lg:col-span-7 space-y-5 text-gray-300 leading-relaxed">
                     <p class="text-lg text-gray-200">
-                        Full-Stack Developer with over <span class="text-brand-500 font-semibold">5 years of hands-on experience</span> engineering and maintaining mission-critical web applications, high-concurrency REST APIs, microservices, and complex system integrations.
+                        Backend Developer with over <span class="text-brand-500 font-semibold">5 years of software development experience</span> across backend and full-stack work, building REST APIs, microservices, and enterprise integrations.
                     </p>
                     <p>
-                        Backend-strong specialization in <strong class="text-white">Python (FastAPI, Django, Flask)</strong>, asynchronous Python <code class="text-brand-400 font-mono">asyncio</code>, database engineering (SQL, PostgreSQL, MySQL, NoSQL), and custom ORM modeling. Experienced in client-facing front-end development utilizing <strong class="text-white">HTML, CSS, and modern JavaScript</strong> to craft intuitive internal dashboards and enterprise screens.
+                        My backend foundation includes <strong class="text-white">Python, FastAPI, Django, Flask, SQL, and cloud platforms</strong>, alongside front-end work with <strong class="text-white">HTML, CSS, and JavaScript</strong>. I also build automation and data-processing workflows.
                     </p>
                     <p>
-                        Deep experience integrating third-party systems including major payment gateways, enterprise CRM/ERP solutions, ServiceNow, and AI desk tools. Highly proficient in security best practices including <strong class="text-white">OAuth2, JWT authentication, and Role-Based Access Control (RBAC)</strong>.
+                        I am moving toward <strong class="text-white">AI Engineering</strong> through practical GenAI and LLM projects, including prompt engineering, LLM integration, and retrieval-augmented generation (RAG).
                     </p>
 
                     <!-- Key Pillars -->
@@ -376,7 +562,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white text-sm">Microservices & APIs</h4>
-                                <p class="text-xs text-gray-400 mt-1">Scalable, async backend architectures designed for high request throughput.</p>
+                                <p class="text-xs text-gray-400 mt-1">Scalable, asynchronous microservices for infrastructure automation.</p>
                             </div>
                         </div>
                         <div class="glass-card p-4 rounded-2xl flex items-start gap-3">
@@ -385,7 +571,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white text-sm">Data Engineering</h4>
-                                <p class="text-xs text-gray-400 mt-1">ETL pipelines handling 50,000+ daily operational records using Pandas & Azure.</p>
+                                <p class="text-xs text-gray-400 mt-1">Data engineering and AI workflows supporting applications delivered to 10,000+ users per client.</p>
                             </div>
                         </div>
                     </div>
@@ -393,34 +579,34 @@
 
                 <!-- Quick Information Card -->
                 <div class="lg:col-span-5">
-                    <div class="glass-panel p-8 rounded-3xl border border-gray-800 space-y-6 shadow-2xl">
+                    <div class="glass-panel p-5 sm:p-8 rounded-3xl border border-gray-800 space-y-6 shadow-2xl">
                         <h3 class="text-xl font-bold text-white border-b border-gray-800 pb-4 flex items-center justify-between">
                             <span>Key Details</span>
                             <span class="text-xs font-mono font-normal text-brand-500 bg-brand-500/10 px-3 py-1 rounded-full">Dubai, UAE</span>
                         </h3>
 
                         <dl class="space-y-4 text-sm">
-                            <div class="flex justify-between items-center py-2 border-b border-gray-800/50">
+                            <div class="flex justify-between items-center gap-4 py-2 border-b border-gray-800/50">
                                 <dt class="text-gray-400">Current Location</dt>
                                 <dd class="text-white font-medium">Dubai, UAE</dd>
                             </div>
-                            <div class="flex justify-between items-center py-2 border-b border-gray-800/50">
+                            <div class="flex justify-between items-center gap-4 py-2 border-b border-gray-800/50">
                                 <dt class="text-gray-400">Visa Status</dt>
-                                <dd class="text-emerald-400 font-medium">Spouse Visa</dd>
+                                <dd class="text-emerald-400 font-medium">Residence Visa</dd>
                             </div>
-                            <div class="flex justify-between items-center py-2 border-b border-gray-800/50">
+                            <div class="flex justify-between items-center gap-4 py-2 border-b border-gray-800/50">
                                 <dt class="text-gray-400">Availability</dt>
                                 <dd class="text-brand-400 font-medium">Immediate Joiner</dd>
                             </div>
-                            <div class="flex justify-between items-center py-2 border-b border-gray-800/50">
+                            <div class="flex justify-between items-center gap-4 py-2 border-b border-gray-800/50">
                                 <dt class="text-gray-400">Primary Core Stack</dt>
-                                <dd class="text-indigo-300 font-medium">Python / FastAPI / JavaScript</dd>
+                                <dd class="text-indigo-300 font-medium text-right max-w-[60%]">Python · FastAPI · Django · JavaScript · SQL</dd>
                             </div>
-                            <div class="flex justify-between items-center py-2 border-b border-gray-800/50">
+                            <div class="flex justify-between items-center gap-4 py-2 border-b border-gray-800/50">
                                 <dt class="text-gray-400">Cloud Platforms</dt>
                                 <dd class="text-sky-300 font-medium">Microsoft Azure & AWS</dd>
                             </div>
-                            <div class="flex justify-between items-center py-2">
+                            <div class="flex justify-between items-center gap-4 py-2">
                                 <dt class="text-gray-400">Degree</dt>
                                 <dd class="text-white font-medium">B.E. Computer Science</dd>
                             </div>
@@ -440,12 +626,12 @@
     </section>
 
     <!-- Technical Skills Section -->
-    <section id="skills" class="py-20 relative">
+    <section id="skills" class="py-16 sm:py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
                 <h2 class="text-xs font-semibold text-brand-500 tracking-widest uppercase mb-2 font-mono">Technical Capability</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                <p class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
                     Tools & Technologies Stack
                 </p>
                 <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-indigo-500 mx-auto mt-4 rounded-full"></div>
@@ -467,11 +653,16 @@
                     </div>
                     <div class="space-y-3 pt-2">
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-brand-500/30 text-xs text-brand-300 font-mono">Python 3.x</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-brand-500/30 text-xs text-brand-300 font-mono">Python</span>
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">FastAPI</span>
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Django</span>
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Flask</span>
-                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Java Spring Boot</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Java</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Spring Boot</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">SQL</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Microservices</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">YAML</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">PowerShell</span>
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-indigo-300 font-mono">asyncio</span>
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">REST APIs</span>
                         </div>
@@ -491,10 +682,9 @@
                     </div>
                     <div class="space-y-3 pt-2">
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-indigo-500/30 text-xs text-indigo-300 font-mono">JavaScript ES6+</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-indigo-500/30 text-xs text-indigo-300 font-mono">JavaScript</span>
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">HTML5</span>
-                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">CSS3</span>
-                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Tailwind CSS</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">CSS</span>
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Responsive Layouts</span>
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">API Integration</span>
                         </div>
@@ -520,7 +710,7 @@
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">SQL Optimization</span>
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-emerald-300 font-mono">Pandas</span>
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">NumPy</span>
-                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">NoSQL</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">SQL</span>
                         </div>
                     </div>
                 </div>
@@ -564,6 +754,9 @@
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-purple-500/30 text-xs text-purple-300 font-mono">Docker</span>
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Docker Compose</span>
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">GitHub Actions</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">GitHub</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">StackStorm</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Ansible</span>
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Microsoft Azure</span>
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">AWS</span>
                             <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Linux / Shell</span>
@@ -593,24 +786,49 @@
                     </div>
                 </div>
 
+                <!-- Category 7: AI & Generative AI -->
+                <div class="glass-card rounded-3xl p-6 border border-gray-800 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-base">AI & Generative AI</h3>
+                            <p class="text-xs text-gray-400">Project-based AI engineering</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-indigo-500/30 text-xs text-indigo-300 font-mono">LLMs</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">RAG</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">LLM Integration</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Prompt Engineering</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">AI Agents</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Agentic AI</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">LangChain</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">LangGraph</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Google Gemini</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-gray-900 border border-gray-700 text-xs text-gray-200 font-mono">Azure OpenAI</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Experience Timeline Section -->
-    <section id="experience" class="py-20 relative bg-darkcard/50 border-y border-gray-800/60">
+    <section id="experience" class="py-16 sm:py-20 relative bg-darkcard/50 border-y border-gray-800/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
                 <h2 class="text-xs font-semibold text-brand-500 tracking-widest uppercase mb-2 font-mono">Career History</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                <p class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
                     Professional Experience
                 </p>
                 <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-indigo-500 mx-auto mt-4 rounded-full"></div>
             </div>
 
             <!-- Vertical Timeline -->
-            <div class="relative border-l-2 border-gray-800 ml-4 md:ml-32 space-y-12">
+            <div class="relative border-l-2 border-gray-800 ml-4 md:ml-32 space-y-10 md:space-y-12">
                 
                 <!-- Role 1: NTT DATA -->
                 <div class="relative pl-8 group">
@@ -630,7 +848,7 @@
                         <div class="flex flex-wrap items-start justify-between gap-4">
                             <div>
                                 <div class="inline-block md:hidden text-xs font-mono text-brand-400 mb-1">DEC 2024 – MAR 2026</div>
-                                <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">Python Developer</h3>
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">Python Full Stack Developer</h3>
                                 <p class="text-sm font-semibold text-indigo-400">NTT DATA &nbsp;|&nbsp; <span class="text-gray-400 font-normal">Bangalore, India</span></p>
                             </div>
                             <span class="px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs font-mono font-medium">Enterprise Solutions</span>
@@ -638,22 +856,25 @@
 
                         <!-- Highlights List -->
                         <ul class="space-y-2.5 text-sm text-gray-300 list-disc list-inside marker:text-brand-500">
-                            <li>Built and maintained <strong>15+ backend modules</strong> in Core Python and FastAPI using microservices architecture, clean coding practices, and dependency injection.</li>
-                            <li>Designed <strong>10+ secure REST APIs</strong> using Pydantic, OAuth2, and JWT, integrating <strong>ServiceNow and AI Desk</strong> enterprise systems.</li>
-                            <li>Engineered asynchronous workflows with FastAPI & asyncio, handling <strong>500+ concurrent requests</strong> and reducing response latency by ~30%.</li>
-                            <li>Created ETL pipelines processing <strong>50,000+ daily operational records</strong> using Pandas, NumPy, and Azure Blob Storage, reducing manual reporting effort by 25%.</li>
-                            <li>Managed relational and NoSQL data models with Django ORM, performing schema/query optimizations that improved operational efficiency by <strong>40%</strong>.</li>
-                            <li>Maintained CI/CD pipelines via GitHub Actions and Docker Compose, supporting <strong>5+ production releases monthly</strong> with zero downtime.</li>
+                            <li>Developed core Python backend systems using object-oriented design and Pydantic validation to deliver event-driven automation services for infrastructure management.</li>
+                            <li>Designed <strong>10+ REST APIs</strong> secured with OAuth, JWT, and API gateways, integrating ServiceNow and AI Desk.</li>
+                            <li>Built asynchronous event-driven services with Django, Flask, FastAPI, and asyncio to improve microservice scalability and availability.</li>
+                            <li>Analyzed operational data with Pandas and NumPy and built predictive models with TensorFlow and PyTorch to identify infrastructure anomalies.</li>
+                            <li>Designed ETL pipelines for reporting workflows and improved operational efficiency by <strong>40%</strong> through backend automation and proactive monitoring.</li>
+                            <li>Performed structured logging, root-cause analysis, unit and integration testing, and contributed to Git-based CI/CD and Agile delivery.</li>
                         </ul>
 
                         <!-- Skills Used Pills -->
                         <div class="pt-2 flex flex-wrap gap-2">
-                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">FastAPI</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Python Asyncio</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">OAuth2/JWT</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Azure Blob</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Pandas</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Docker</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Python / Django / Flask / FastAPI</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Pydantic / Microservices</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">REST APIs / OAuth / JWT / API Gateway</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">SQL / SQLAlchemy / Django ORM</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">ServiceNow / AI Desk</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Pandas / NumPy / TensorFlow / PyTorch</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">ETL / Azure / AWS</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">PowerShell / YAML / StackStorm</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Git / CI/CD / Monitoring</span>
                         </div>
                     </div>
                 </div>
@@ -676,7 +897,7 @@
                         <div class="flex flex-wrap items-start justify-between gap-4">
                             <div>
                                 <div class="inline-block md:hidden text-xs font-mono text-indigo-400 mb-1">JUN 2022 – SEP 2024</div>
-                                <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">Python Backend Engineer</h3>
+                                <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">Software Developer</h3>
                                 <p class="text-sm font-semibold text-brand-400">Capgemini &nbsp;|&nbsp; <span class="text-gray-400 font-normal">Bangalore, India</span></p>
                             </div>
                             <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 text-xs font-mono font-medium">Enterprise Backends</span>
@@ -684,20 +905,19 @@
 
                         <!-- Highlights List -->
                         <ul class="space-y-2.5 text-sm text-gray-300 list-disc list-inside marker:text-indigo-400">
-                            <li>Developed web backends using Python, Django, FastAPI, contributing to <strong>10+ core modules</strong> across business domains.</li>
-                            <li>Integrated third-party systems including <strong>Payment Gateways and CRM/ERP platforms</strong> with OAuth2 authentication.</li>
-                            <li>Built and styled client UI screens using <strong>HTML, CSS, and JavaScript</strong> to interface with internal tools and REST endpoints.</li>
-                            <li>Optimized MySQL and PostgreSQL queries via Django ORM, boosting response times by 25% for high-traffic endpoints.</li>
-                            <li>Automated deployments using Docker, GitHub Actions, and Shell scripting, reducing release turnaround times by <strong>40%</strong> and supporting <strong>99.9% uptime</strong>.</li>
+                            <li>Developed backend applications using Python, Django, and FastAPI, including routing, templating, database integration, and Pydantic validation.</li>
+                            <li>Built REST APIs and microservices with Flask and Pyramid, applying authentication, authorization, encryption, and API development practices.</li>
+                            <li>Created Python automation applications and web frameworks using Django and Flask.</li>
+                            <li>Used SQLAlchemy and Django ORM with MySQL and PostgreSQL for models, CRUD operations, and transaction management.</li>
+                            <li>Supported ETL and data analysis with Pandas and NumPy, and automated deployment pipelines using Git, CI/CD, PowerShell, and Linux scripting.</li>
                         </ul>
 
                         <!-- Skills Used Pills -->
                         <div class="pt-2 flex flex-wrap gap-2">
-                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Django</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Payment Gateway API</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">JavaScript UI</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">PostgreSQL</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">CI/CD</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Django / FastAPI / Flask / Pyramid</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">SQLAlchemy / Django ORM</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">MySQL / PostgreSQL</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">PowerShell / Linux / CI/CD</span>
                         </div>
                     </div>
                 </div>
@@ -706,8 +926,8 @@
                 <div class="relative pl-8 group">
                     <!-- Date Pill on Left (Desktop) -->
                     <div class="hidden md:block absolute -left-36 top-1 text-right w-28">
-                        <span class="text-xs font-mono font-bold text-brand-400 block">DEC 2020</span>
-                        <span class="text-xs font-mono text-gray-500 block">MAR 2022</span>
+                        <span class="text-xs font-mono font-bold text-brand-400 block">AUG 2020</span>
+                        <span class="text-xs font-mono text-gray-500 block">MAY 2022</span>
                     </div>
 
                     <!-- Timeline Marker Icon -->
@@ -719,7 +939,7 @@
                     <div class="glass-card rounded-3xl p-6 md:p-8 border border-gray-800 space-y-4">
                         <div class="flex flex-wrap items-start justify-between gap-4">
                             <div>
-                                <div class="inline-block md:hidden text-xs font-mono text-sky-400 mb-1">DEC 2020 – MAR 2022</div>
+                                <div class="inline-block md:hidden text-xs font-mono text-sky-400 mb-1">AUG 2020 – MAY 2022</div>
                                 <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors">Software Developer</h3>
                                 <p class="text-sm font-semibold text-sky-400">Inventeron Technologies &nbsp;|&nbsp; <span class="text-gray-400 font-normal">Bangalore, India</span></p>
                             </div>
@@ -728,7 +948,7 @@
 
                         <!-- Highlights List -->
                         <ul class="space-y-2.5 text-sm text-gray-300 list-disc list-inside marker:text-sky-400">
-                            <li>Assisted in developing and maintaining backend features using <strong>Python and Java Spring Boot</strong> for microservices architectures.</li>
+                            <li>Developed backend applications using <strong>Java and Spring Boot</strong> and contributed to REST API and microservices integrations.</li>
                             <li>Evaluated technical frameworks through R&D activities to optimize application performance and maintainability.</li>
                             <li>Wrote clean, modular code following team coding standards, peer reviews, and SDLC Agile practices.</li>
                             <li>Participated directly in client interactions to clarify technical specifications and deliver required features on time.</li>
@@ -737,7 +957,8 @@
                         <!-- Skills Used Pills -->
                         <div class="pt-2 flex flex-wrap gap-2">
                             <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Python</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Java Spring Boot</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Java</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Spring Boot</span>
                             <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">SQL</span>
                             <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-xs text-gray-400 font-mono">Agile</span>
                         </div>
@@ -749,12 +970,12 @@
     </section>
 
     <!-- Major Projects Showcase Section -->
-    <section id="projects" class="py-20 relative">
+    <section id="projects" class="py-16 sm:py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
                 <h2 class="text-xs font-semibold text-brand-500 tracking-widest uppercase mb-2 font-mono">Featured Engineering Work</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                <p class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
                     Key Systems & Integrations
                 </p>
                 <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-indigo-500 mx-auto mt-4 rounded-full"></div>
@@ -771,23 +992,23 @@
                             <i class="fa-solid fa-server text-gray-500 group-hover:text-brand-500 transition-colors text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">
-                            Enterprise Asynchronous Gateway & System Integrator
+                            NTT DATA Event-Driven Backend Services
                         </h3>
                         <p class="text-sm text-gray-300 leading-relaxed">
-                            Built high-throughput backend services using FastAPI & asyncio supporting 500+ concurrent requests. Integrated ServiceNow and AI Desk platforms with Pydantic schemas, JWT authentication, and automated error recovery.
+                            Developed Python microservices and event-driven infrastructure automation, including 10+ REST APIs secured with OAuth and JWT and integrations with ServiceNow and AI Desk.
                         </p>
                         <div class="bg-gray-950 p-3 rounded-xl border border-gray-800 font-mono text-xs text-gray-400 space-y-1">
-                            <div><span class="text-emerald-400">✓ Reduced Latency:</span> ~30% improvement</div>
-                            <div><span class="text-indigo-400">✓ Security:</span> OAuth2 / JWT Role-Based Access</div>
+                            <div><span class="text-emerald-400">✓ Delivery:</span> 10+ secure REST APIs</div>
+                            <div><span class="text-indigo-400">✓ Impact:</span> 40% operational efficiency improvement</div>
                         </div>
                     </div>
-                    <div class="pt-6 border-t border-gray-800/80 flex items-center justify-between mt-6">
+                    <div class="pt-6 border-t border-gray-800/80 flex flex-wrap items-center justify-between gap-3 mt-6">
                         <div class="flex flex-wrap gap-1.5">
                             <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">FastAPI</span>
                             <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">OAuth2</span>
                             <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">ServiceNow API</span>
                         </div>
-                        <button onclick="showProjectDetails('Project 1: Asynchronous Gateway')" class="text-xs text-brand-500 hover:text-brand-400 font-semibold flex items-center gap-1">
+                        <button onclick="showProjectDetails('NTT DATA Event-Driven Backend Services')" class="text-xs text-brand-500 hover:text-brand-400 font-semibold flex items-center gap-1">
                             Details <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>
@@ -801,23 +1022,23 @@
                             <i class="fa-solid fa-chart-line text-gray-500 group-hover:text-indigo-400 transition-colors text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">
-                            Operational Infrastructure Analytics Pipeline
+                            Infrastructure Data & Predictive Analytics
                         </h3>
                         <p class="text-sm text-gray-300 leading-relaxed">
-                            Designed automated data transformation workflows processing 50,000+ operational records daily. Leveraged Pandas and NumPy with Azure Blob Storage backend to power enterprise reporting dashboards.
+                            Analyzed infrastructure datasets with Pandas and NumPy and developed predictive models with TensorFlow and PyTorch to identify anomalies and support reporting. ETL workflows automated data transformation for operational decisions.
                         </p>
                         <div class="bg-gray-950 p-3 rounded-xl border border-gray-800 font-mono text-xs text-gray-400 space-y-1">
-                            <div><span class="text-emerald-400">✓ Efficiency:</span> Reduced manual reporting by ~25%</div>
-                            <div><span class="text-sky-400">✓ Storage:</span> Azure Blob Storage Integration</div>
+                            <div><span class="text-emerald-400">✓ Analytics:</span> Predictive anomaly signals</div>
+                            <div><span class="text-sky-400">✓ Data:</span> ETL and reporting workflows</div>
                         </div>
                     </div>
-                    <div class="pt-6 border-t border-gray-800/80 flex items-center justify-between mt-6">
+                    <div class="pt-6 border-t border-gray-800/80 flex flex-wrap items-center justify-between gap-3 mt-6">
                         <div class="flex flex-wrap gap-1.5">
                             <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Pandas</span>
                             <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Azure Blob</span>
                             <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">NumPy</span>
                         </div>
-                        <button onclick="showProjectDetails('Project 2: Infrastructure Analytics')" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold flex items-center gap-1">
+                        <button onclick="showProjectDetails('Infrastructure Data & Predictive Analytics')" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold flex items-center gap-1">
                             Details <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>
@@ -827,27 +1048,27 @@
                 <div class="glass-card rounded-3xl p-6 md:p-8 border border-gray-800 flex flex-col justify-between group">
                     <div class="space-y-4">
                         <div class="flex justify-between items-center">
-                            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">FinTech & ERP Integration</span>
+                            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Java Backend Development</span>
                             <i class="fa-solid fa-credit-card text-gray-500 group-hover:text-emerald-400 transition-colors text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
-                            Payment Gateway & CRM/ERP Middleware
+                            Java Spring Boot Microservices
                         </h3>
                         <p class="text-sm text-gray-300 leading-relaxed">
-                            Architected scalable Django ORM microservices integrating secure third-party payment gateways and ERP platforms. Optimized schema indexes and queries, maintaining 99.9% uptime across production endpoints.
+                            Developed backend applications using Java and Spring Boot, contributing to REST API development and microservices-based enterprise integrations. Database query optimization reduced API response times by 20%.
                         </p>
                         <div class="bg-gray-950 p-3 rounded-xl border border-gray-800 font-mono text-xs text-gray-400 space-y-1">
-                            <div><span class="text-emerald-400">✓ Availability:</span> 99.9% Uptime Achieved</div>
-                            <div><span class="text-yellow-400">✓ DB Speed:</span> Query response boosted by 25%</div>
+                            <div><span class="text-emerald-400">✓ Architecture:</span> Microservices-based integrations</div>
+                            <div><span class="text-yellow-400">✓ Performance:</span> 20% faster API responses</div>
                         </div>
                     </div>
-                    <div class="pt-6 border-t border-gray-800/80 flex items-center justify-between mt-6">
+                    <div class="pt-6 border-t border-gray-800/80 flex flex-wrap items-center justify-between gap-3 mt-6">
                         <div class="flex flex-wrap gap-1.5">
-                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Django ORM</span>
-                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">PostgreSQL</span>
-                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Payment API</span>
+                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Java</span>
+                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Spring Boot</span>
+                            <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">REST APIs</span>
                         </div>
-                        <button onclick="showProjectDetails('Project 3: Payment Gateway & ERP')" class="text-xs text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">
+                        <button onclick="showProjectDetails('Java Spring Boot Microservices')" class="text-xs text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">
                             Details <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>
@@ -857,29 +1078,85 @@
                 <div class="glass-card rounded-3xl p-6 md:p-8 border border-gray-800 flex flex-col justify-between group">
                     <div class="space-y-4">
                         <div class="flex justify-between items-center">
-                            <span class="text-xs font-mono text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">Full-Stack Internal Dashboard</span>
+                            <span class="text-xs font-mono text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">Full-Stack Collaboration</span>
                             <i class="fa-solid fa-desktop text-gray-500 group-hover:text-sky-400 transition-colors text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors">
-                            Enterprise Internal Admin Tools & Portal UI
+                            Frontend and Backend Integration
                         </h3>
                         <p class="text-sm text-gray-300 leading-relaxed">
-                            Built interactive front-end screens and toolings using HTML, CSS, and modern JavaScript connected seamlessly to FastAPI backend REST endpoints for internal monitoring and administrative workflows.
+                            Collaborated with frontend engineers and cross-functional teams to connect user-facing components with server-side implementations and align technical delivery with business requirements.
                         </p>
                         <div class="bg-gray-950 p-3 rounded-xl border border-gray-800 font-mono text-xs text-gray-400 space-y-1">
-                            <div><span class="text-emerald-400">✓ Deployment:</span> Automated CI/CD via Docker & GitHub Actions</div>
-                            <div><span class="text-indigo-400">✓ DevOps:</span> Cut turnaround release time by 40%</div>
+                            <div><span class="text-emerald-400">✓ Delivery:</span> Cross-functional Agile sprints</div>
+                            <div><span class="text-indigo-400">✓ Focus:</span> Frontend-to-backend integration</div>
                         </div>
                     </div>
-                    <div class="pt-6 border-t border-gray-800/80 flex items-center justify-between mt-6">
+                    <div class="pt-6 border-t border-gray-800/80 flex flex-wrap items-center justify-between gap-3 mt-6">
                         <div class="flex flex-wrap gap-1.5">
                             <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">JavaScript</span>
                             <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Docker</span>
                             <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">GitHub Actions</span>
                         </div>
-                        <button onclick="showProjectDetails('Project 4: Admin Portal')" class="text-xs text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-1">
+                        <button onclick="showProjectDetails('Frontend and Backend Integration')" class="text-xs text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-1">
                             Details <i class="fa-solid fa-arrow-right"></i>
                         </button>
+                    </div>
+                </div>
+
+                <!-- AI Resume Project -->
+                <div class="glass-card rounded-3xl p-6 md:p-8 border border-gray-800 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-mono text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">AI / Resume Optimization</span>
+                            <i class="fa-solid fa-file-circle-check text-gray-500 group-hover:text-indigo-400 transition-colors text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">ResumePilot &mdash; AI-Powered Resume Optimization</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">An AI-powered platform that helps job seekers create, analyze, and tailor resumes to specific job descriptions. It uses AI to identify relevant skills and keywords, evaluate ATS compatibility, and provide personalized recommendations to improve resume quality and job matching.</p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800/80 flex flex-wrap gap-1.5 mt-6">
+                        <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Python</span>
+                        <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">LLMs</span>
+                        <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Google Gemini</span>
+                        <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Prompt Engineering</span>
+                        <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">ATS Scoring</span>
+                        <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Keyword Matching</span>
+                    </div>
+                </div>
+
+                <!-- LLM Project -->
+                <div class="glass-card rounded-3xl p-6 md:p-8 border border-gray-800 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-mono text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">Generative AI</span>
+                            <i class="fa-solid fa-wand-magic-sparkles text-gray-500 group-hover:text-sky-400 transition-colors text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors">LLM Applications with Gemini</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">Practical Generative AI applications using Google's Gemini models, prompt engineering, and LLM integration for interactive workflows.</p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800/80 flex flex-wrap gap-1.5 mt-6">
+                        <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Python</span>
+                        <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Google Gemini</span>
+                        <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">LLM Integration</span>
+                    </div>
+                </div>
+
+                <!-- Automation Project -->
+                <div class="glass-card rounded-3xl p-6 md:p-8 border border-gray-800 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Automation & Monitoring</span>
+                            <i class="fa-solid fa-gears text-gray-500 group-hover:text-emerald-400 transition-colors text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">Event-Driven Automation Workflows</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">Automation and monitoring workflows for operational health checks, event handling, alerting, and response tasks, coordinated through StackStorm and YAML.</p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800/80 flex flex-wrap gap-1.5 mt-6">
+                        <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Python</span>
+                        <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">YAML</span>
+                        <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">StackStorm</span>
+                        <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">PowerShell</span>
+                        <span class="text-[11px] font-mono text-gray-400 bg-gray-900 px-2 py-0.5 rounded">Event-Driven Workflows</span>
                     </div>
                 </div>
 
@@ -888,12 +1165,12 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="py-20 relative bg-darkcard/50 border-y border-gray-800/60">
+    <section id="certifications" class="py-16 sm:py-20 relative bg-darkcard/50 border-y border-gray-800/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
                 <h2 class="text-xs font-semibold text-brand-500 tracking-widest uppercase mb-2 font-mono">Credentials</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                <p class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
                     Professional Certifications
                 </p>
                 <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-indigo-500 mx-auto mt-4 rounded-full"></div>
@@ -977,7 +1254,7 @@
             </div>
 
             <!-- Education Box -->
-            <div class="mt-12 glass-panel p-6 sm:p-8 rounded-3xl border border-gray-800 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="mt-12 glass-panel p-5 sm:p-8 rounded-3xl border border-gray-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                 <div class="flex items-center gap-4">
                     <div class="w-14 h-14 rounded-2xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-2xl shrink-0">
                         <i class="fa-solid fa-university"></i>
@@ -997,12 +1274,12 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 relative">
+    <section id="contact" class="py-16 sm:py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
                 <h2 class="text-xs font-semibold text-brand-500 tracking-widest uppercase mb-2 font-mono">Get In Touch</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                <p class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
                     Let's Build Something Exceptional
                 </p>
                 <p class="text-sm text-gray-400 mt-2">Currently available in Dubai, UAE for full-stack and backend roles.</p>
@@ -1013,7 +1290,7 @@
                 
                 <!-- Contact Direct Badges -->
                 <div class="lg:col-span-5 space-y-6">
-                    <div class="glass-card p-6 rounded-3xl border border-gray-800 space-y-6">
+                    <div class="glass-card p-5 sm:p-6 rounded-3xl border border-gray-800 space-y-6">
                         <h3 class="text-xl font-bold text-white border-b border-gray-800 pb-4">Direct Contact Details</h3>
                         
                         <!-- Email Badge -->
@@ -1024,7 +1301,7 @@
                                 </div>
                                 <div>
                                     <span class="text-[10px] text-gray-400 font-mono block">EMAIL ADDRESS</span>
-                                    <span class="text-sm font-semibold text-white">suhaima412@gmail.com</span>
+                                    <span class="text-sm font-semibold text-white break-all">suhaima412@gmail.com</span>
                                 </div>
                             </div>
                             <button onclick="copyToClipboard('suhaima412@gmail.com', 'Email')" class="p-2 text-gray-400 hover:text-brand-500 transition-colors" title="Copy Email">
@@ -1056,7 +1333,7 @@
                                 </div>
                                 <div>
                                     <span class="text-[10px] text-gray-400 font-mono block">RESIDENCY & VISA STATUS</span>
-                                    <span class="text-sm font-semibold text-white">Dubai, UAE · Spouse Visa</span>
+                                    <span class="text-sm font-semibold text-white">Dubai, UAE · Residence Visa</span>
                                 </div>
                             </div>
                             <div class="text-xs text-emerald-400 font-mono pt-1 flex items-center gap-1.5 pl-1">
@@ -1073,7 +1350,7 @@
 
                 <!-- Contact Interactive Form -->
                 <div class="lg:col-span-7">
-                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="glass-card p-6 sm:p-8 rounded-3xl border border-gray-800 space-y-5">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="glass-card p-5 sm:p-8 rounded-3xl border border-gray-800 space-y-5">
                         <h3 class="text-xl font-bold text-white mb-2">Send Message</h3>
                         
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -1109,11 +1386,11 @@
 
     <!-- Footer -->
     <footer class="py-8 border-t border-gray-800/80 bg-gray-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 text-center sm:text-left">
             <div>
                 &copy; <span id="year"></span> Syeda Suhaima Banu. All rights reserved.
             </div>
-            <div class="flex items-center gap-6">
+            <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
                 <span>Dubai, United Arab Emirates</span>
                 <a href="#hero" class="text-brand-500 hover:underline">Back to top <i class="fa-solid fa-arrow-up"></i></a>
             </div>
@@ -1122,43 +1399,45 @@
 
     <!-- Resume View Modal Overlay -->
     <div id="resume-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="glass-panel w-full max-w-3xl rounded-3xl border border-gray-700 p-6 sm:p-8 space-y-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <button onclick="closeResumeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white text-xl">
+        <div class="glass-panel w-full max-w-3xl rounded-3xl border border-gray-700 p-5 sm:p-8 space-y-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeResumeModal()" class="absolute top-4 right-4 sm:top-6 sm:right-6 w-9 h-9 flex items-center justify-center rounded-lg text-gray-400 hover:text-white text-xl" aria-label="Close resume">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <div class="border-b border-gray-800 pb-4">
-                <h3 class="text-2xl font-bold text-white">Syeda Suhaima Banu</h3>
-                <p class="text-xs text-brand-500 font-mono mt-1">Full-Stack Developer | Python & JavaScript | REST APIs & System Integration</p>
+            <div class="border-b border-gray-800 pb-4 pr-10">
+                <h3 class="text-xl sm:text-2xl font-bold text-white">Syeda Suhaima Banu</h3>
+                <p class="text-xs text-brand-500 font-mono mt-1">Backend Developer | Moving Towards AI Engineer</p>
                 <p class="text-xs text-gray-400 mt-0.5">Dubai, UAE · +971-551869330 · suhaima412@gmail.com</p>
             </div>
 
             <div class="space-y-4 text-xs text-gray-300">
                 <h4 class="font-bold text-sm text-white uppercase tracking-wider font-mono text-brand-400">Professional Summary</h4>
                 <p class="leading-relaxed">
-                    Full-Stack Developer with 5+ years of experience building and maintaining web applications, REST APIs, microservices, and system integrations. Backend-strong in Python, Django, FastAPI, Flask, SQL, MySQL, PostgreSQL and NoSQL, with hands-on front-end work in HTML, CSS and JavaScript. Experienced integrating third-party services including payment gateways and CRM/ERP systems, with authentication/authorization, performance optimization, troubleshooting, testing, monitoring, Docker, Git, CI/CD, Azure and AWS.
+                    Backend and full-stack developer with 5+ years of software development experience building web applications, REST APIs, microservices, and integrations. Core experience includes Python, Django, FastAPI, Flask, SQL, JavaScript, cloud platforms, automation, and CI/CD. Moving toward AI Engineering through project work with LLMs, RAG, GenAI, and prompt engineering.
                 </p>
 
                 <h4 class="font-bold text-sm text-white uppercase tracking-wider font-mono text-brand-400 pt-2">Key Work Highlights</h4>
                 <ul class="list-disc list-inside space-y-1.5 text-gray-300">
-                    <li><strong>NTT DATA (Dec 2024 - Mar 2026):</strong> Built 15+ Core Python & FastAPI microservices; 10+ REST APIs integrating ServiceNow and AI Desk; 50k+ daily record ETL pipelines.</li>
-                    <li><strong>Capgemini (Jun 2022 - Sep 2024):</strong> Developed 10+ backend modules; payment gateway & CRM/ERP integrations; front-end HTML/CSS/JS screens; 99.9% uptime.</li>
-                    <li><strong>Inventeron Technologies (Dec 2020 - Mar 2022):</strong> Python & Java Spring Boot microservices, client requirement discussions, Agile delivery.</li>
+                    <li><strong>NTT DATA, Python Full Stack Developer (Dec 2024 - Mar 2026):</strong> Developed Python microservices and 10+ secure REST APIs, event-driven automation, predictive infrastructure analytics, and ETL workflows.</li>
+                    <li><strong>Capgemini, Software Developer (Jun 2022 - Sep 2024):</strong> Built Python backend applications, REST APIs, microservices, automation, and database/ETL workflows with Django, FastAPI, Flask, and Pyramid.</li>
+                    <li><strong>Inventeron Technologies (Aug 2020 - May 2022):</strong> Developed Java and Spring Boot backend applications and microservice integrations; improved API response times by 20% through query optimization.</li>
                 </ul>
             </div>
 
             <div class="pt-4 border-t border-gray-800 flex flex-wrap justify-between items-center gap-4">
-                <span class="text-xs text-emerald-400 font-mono"><i class="fa-solid fa-check"></i> Spouse Visa · Immediate Joiner</span>
-                <div class="flex gap-3">
+                <span class="text-xs text-emerald-400 font-mono"><i class="fa-solid fa-check"></i> Residence Visa · Immediate Joiner</span>
+                <div class="flex flex-wrap gap-2">
+                    <a href="Resume/Syeda_Python_Full_Stack_Developer.pdf" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-gray-800 text-xs font-semibold text-gray-300 hover:bg-gray-700"><i class="fa-solid fa-eye mr-1"></i>Preview PDF</a>
+                    <a href="Resume/Syeda_Python_Full_Stack_Developer.pdf" download="Syeda_Python_Full_Stack_Developer.pdf" class="px-4 py-2 rounded-xl bg-gray-800 text-xs font-semibold text-gray-300 hover:bg-gray-700"><i class="fa-solid fa-download mr-1"></i>Download PDF</a>
                     <button onclick="closeResumeModal()" class="px-4 py-2 rounded-xl bg-gray-800 text-xs font-semibold text-gray-300 hover:bg-gray-700">Close</button>
-                    <button onclick="printResume()" class="px-4 py-2 rounded-xl bg-brand-600 text-xs font-semibold text-white hover:bg-brand-500 shadow-lg">Print / Save PDF</button>
+                    <button onclick="printResume()" class="px-4 py-2 rounded-xl bg-brand-600 text-xs font-semibold text-white hover:bg-brand-500 shadow-lg">Print Summary</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Notification Toast Element -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 glass-panel px-5 py-3 rounded-2xl border border-brand-500/50 text-white text-xs font-medium flex items-center gap-3 shadow-2xl">
+    <div id="toast" class="fixed bottom-4 left-4 right-4 sm:left-auto sm:bottom-6 sm:right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 glass-panel px-5 py-3 rounded-2xl border border-brand-500/50 text-white text-xs font-medium flex items-center gap-3 shadow-2xl">
         <div id="toast-icon" class="text-brand-500 text-base"></div>
         <span id="toast-msg">Notification Message</span>
     </div>
@@ -1168,26 +1447,76 @@
         // Set Year in Footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        function applyTheme(theme) {
+            const isLight = theme === 'light';
+            document.body.classList.toggle('light-theme', isLight);
+            themeIcon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+            themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+            themeToggle.title = isLight ? 'Switch to dark mode' : 'Switch to light mode';
+            localStorage.setItem('portfolio-theme', theme);
+        }
+
+        function toggleTheme() {
+            applyTheme(document.body.classList.contains('light-theme') ? 'dark' : 'light');
+        }
+
+        applyTheme(localStorage.getItem('portfolio-theme') || 'dark');
+
         // Mobile Menu Toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        function setMenuOpen(open) {
+            mobileMenu.classList.toggle('hidden', !open);
+            menuIcon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+            menuBtn.setAttribute('aria-expanded', String(open));
+            menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        }
+
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            setMenuOpen(mobileMenu.classList.contains('hidden'));
         });
 
         // Close Mobile menu when clicking any nav link
         document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+            link.addEventListener('click', () => setMenuOpen(false));
         });
+
+        // Close mobile menu when resizing up to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) setMenuOpen(false);
+        });
+
+        // Header shadow on scroll
+        const navbar = document.getElementById('navbar');
+        function updateNavbar() {
+            navbar.classList.toggle('is-scrolled', window.scrollY > 10);
+        }
+        window.addEventListener('scroll', updateNavbar, { passive: true });
+        updateNavbar();
+
+        // Highlight the nav link for the section in view
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sectionObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const id = '#' + entry.target.id;
+                navLinks.forEach(link => link.classList.toggle('is-active', link.getAttribute('href') === id));
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        document.querySelectorAll('section[id]').forEach(section => sectionObserver.observe(section));
 
         // Typewriter Effect
         const roles = [
-            "Full-Stack Developer",
+            "Backend Developer",
             "Python & FastAPI Specialist",
             "REST API & Microservices Architect",
-            "Data Pipeline & System Integrator"
+            "LLM, RAG & GenAI Project Builder",
+            "Moving Towards AI Engineering"
         ];
         let roleIdx = 0;
         let charIdx = 0;
